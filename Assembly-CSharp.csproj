@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D3184B81-144B-CC7F-380D-3B2C1A3D2214}</ProjectGuid>
+    <ProjectGuid>{62873BB6-A352-5450-430A-56E3FCEBDD74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,33 +56,36 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Accion.cs" />
     <Compile Include="Assets\Scripts\Personaje\Personaje.cs" />
+    <Compile Include="Assets\WaypointMovimiento.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionDesactivarCaminoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
+    <Compile Include="Assets\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Estado.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMana.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionDetectarPersonaje.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionSeguirPersonaje.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionPersonajeRangoDeAtaque.cs" />
+    <Compile Include="Assets\Scripts\Extras\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Manager\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeExperiencia.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Controller.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Decision.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
+    <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMover.cs" />
+    <Compile Include="Assets\Scripts\Extras\TextoAnimacion.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Transicion.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionActivarCaminoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeVida.cs" />
     <Compile Include="Assets\Scripts\Extras\AtributoButton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeStats.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionPersonajeRangoDeAtaque.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Estado.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionActivarCaminoMovimiento.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionDesactivarCaminoMovimiento.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionDetectarPersonaje.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionSeguirPersonaje.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Decision.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Accion.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Controller.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoMovimiento.cs" />
-    <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Transicion.cs" />
-    <Compile Include="Assets\Waypoint.cs" />
-    <Compile Include="Assets\WaypointMovimiento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
