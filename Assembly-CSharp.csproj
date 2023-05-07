@@ -86,6 +86,10 @@
     <Compile Include="Assets\Scripts\Personaje\PersonajeStats.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioUI.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
