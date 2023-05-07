@@ -13,6 +13,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Paneles")]
     [SerializeField] private GameObject panelStat;
+    [SerializeField] private GameObject panelInventario;
 
     //Creamos unas referencias para obtener la imagen de la vida,el mana, exp y el texto
 
@@ -20,6 +21,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Image vidaJugador;
     [SerializeField] private Image ManaJugador;
     [SerializeField] private Image ExpJugador;
+
+
     [Header("Texto")]
     [SerializeField] private TextMeshProUGUI vidaTMP;
     [SerializeField] private TextMeshProUGUI ManaTMP;
@@ -135,4 +138,20 @@ public class UIManager : Singleton<UIManager>
         expActual = pExpAc;
         expRequeridaNewLevel= pExpReq;
     }
+
+    //Creamos una region para nuestros paneles de stats, inventario y quest
+    #region Paneles
+    //Creamos el metodo para abrir y cerrar el panel de Stats
+    public void AbrirCerrarPanelStats()
+    {
+        //llamamos al panel stats para activarlo o desactivarlo, si esta activo nos devuelve true
+        panelStat.SetActive(!panelStat.activeSelf);
+    }
+
+    //Creamos el metodo para abrir y cerrar el panel inventario
+    public void AbrirCerrarInventario()
+    {
+        panelInventario.SetActive(!panelInventario.activeSelf);
+    }
+    #endregion
 }
