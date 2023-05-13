@@ -30,4 +30,11 @@ public class InventarioItem : ScriptableObject
     //Ajustamos la cantidad maxima que podemos añadir en un slot de un solo objeto
     public int AcumulacionMax;
     [HideInInspector] public int cantidad;
+
+    //Creamos un nuevo metodo que nos retorne una instancia por cada metodo que añadamos
+    public InventarioItem CopiarItem()
+    {
+        InventarioItem nuevaInstancia = Instantiate(original: this);
+        return nuevaInstancia;
+    }
 }
