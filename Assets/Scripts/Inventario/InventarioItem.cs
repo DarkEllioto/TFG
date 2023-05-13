@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Creamos una enumeracion para todos los tipos de item
+public enum tiposDeItems{
+    Armas,
+    Pociones,
+    Pergaminos,
+    Ingredientes,
+    Tesoros
+
+}
 public class InventarioItem : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Creamos nuestros headers para el inspector
+    [Header("Parametros")]
+    public string ID;
+    public string Nombre;
+    public Sprite Icono;
+    //Añadimos un text area para poder añadir mas texto en caso de necesitarlo
+    [TextArea]public string Descripcion;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Informacion")]
+    public tiposDeItems Tipo;
+    //Creamos las variables que nos digan si son consumibles o equipables
+    public bool esConsumible;
+    public bool esAcumulable;
+    //Ajustamos la cantidad maxima que podemos añadir en un slot de un solo objeto
+    public int AcumulacionMax;
+    [HideInInspector] public int cantidad;
 }

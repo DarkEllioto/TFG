@@ -59,6 +59,9 @@ TagManager:
   - name: Tilemaps_props
     uniqueID: 1203760703
     locked: 0
+  - name: Items
+    uniqueID: 2281838915
+    locked: 0
   - name: Personaje
     uniqueID: 492200409
     locked: 0

@@ -90,6 +90,9 @@
     <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionVida.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionMana.cs" />
+    <Compile Include="Assets\Scripts\Inventario\ItemPorAgregar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
