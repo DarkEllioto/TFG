@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using System;
+using TMPro;
 public class InventarioUI : Singleton<InventarioUI>
 {
+    //Creamos un header para el panel inventario
+    [Header("Panel Inventario Descripcion")]
+    [SerializeField] private GameObject panelInventarioDescripcion;
+    [SerializeField] private Image itemIcono;
+    [SerializeField] private TextMeshProUGUI itemNombre;
+    [SerializeField] private TextMeshProUGUI itemDescripcion;
     //Creamos los campos para los slots de nuestro inventario
     [SerializeField] private InventarioSlot slotPrefab;
     [SerializeField] private Transform contenedor;
@@ -49,5 +57,47 @@ public class InventarioUI : Singleton<InventarioUI>
           
         }
     }
-   
+    //Creamos el metodo para actualizar la descripcion
+    private void ActualizarInventarioDescripcion(int index)
+    {
+        //Comprobamos que no sea null
+        if(Inventario.Instance.ItemsInventario[index] != null)
+        {
+            //Referenciamos imagen, nombre del objeto y descripcion
+            itemIcono.sprite = Inventario.Instance.ItemsInventario[index].Icono;
+            itemNombre.text = Inventario.Instance.ItemsInventario[index].Nombre;
+            itemDescripcion.text = Inventario.Instance.ItemsInventario[index].Descripcion;
+            //Activamos el panel que por defecto estara desactivado
+            panelInventarioDescripcion.SetActive(true);
+        }
+        else
+        {
+            //Desctivamos el panel que por defecto estara desactivado
+            panelInventarioDescripcion.SetActive(false);
+        }
+    }
+    //Creamos la igualdad para el evento
+    
+    private void SlotInteraccionRespuesta(TipoDeInteraccion tipo,int index)
+    {
+        //Nos aseguramos de estar llamando a un evento de tipo click
+        if( tipo == TipoDeInteraccion.Click)
+        {
+            //Referenciamos los gameobject
+            ActualizarInventarioDescripcion(index);
+        }
+    }
+
+    //Añadimos los metodos para habilitad y deshabilitar el evento
+
+    private void OnEnable()
+    {
+        InventarioSlot.EventoSlotInteraccion += SlotInteraccionRespuesta;
+    }
+
+    private void OnDisable()
+    {
+        InventarioSlot.EventoSlotInteraccion -= SlotInteraccionRespuesta;
+    }
+
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,8 +6,17 @@ using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum TipoDeInteraccion
+{
+    Click,
+    Usar,
+    Equipar,
+    Remover
+}
 public class InventarioSlot : MonoBehaviour
 {
+    //Creamos un evento para cuando usamos los objetos
+    public static Action<TipoDeInteraccion, int> EventoSlotInteraccion;
     //Creamos los campos para referenciar nuestro icono,cantidad e imagen del inventario
     [SerializeField] private Image itemIcono;
     [SerializeField] private GameObject fondoCantidad;
@@ -27,5 +37,10 @@ public class InventarioSlot : MonoBehaviour
     {
         itemIcono.gameObject.SetActive(estado);
         fondoCantidad.SetActive(estado);
+    }
+    //Creamos un metodo para usar el evento 
+    public void ClickSlot()
+    {
+        EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Click,Index);
     }
 }

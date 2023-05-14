@@ -15,6 +15,7 @@ public class Inventario : Singleton<Inventario>
     //Creamos un array para guardar los items de nuestro inventario
     [Header("Items")]
     [SerializeField] private InventarioItem[] itemsInventario;
+    public InventarioItem[] ItemsInventario => itemsInventario;
 
     private void Start()
     {

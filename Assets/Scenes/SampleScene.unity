@@ -26664,7 +26664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &817569828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29516,6 +29516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab3e35e1fcb3204d9655ebbc1ce268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelInventarioDescripcion: {fileID: 817569827}
+  itemIcono: {fileID: 1366864876}
+  itemNombre: {fileID: 590059199}
+  itemDescripcion: {fileID: 1821996209}
   slotPrefab: {fileID: 6043119819365391860, guid: b7d02d2bf114f3846964977d52aaa03c, type: 3}
   contenedor: {fileID: 387978904}
 --- !u!114 &1055783097
@@ -37392,8 +37396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -51.580738}
-  m_SizeDelta: {x: 312, y: 300.6295}
+  m_AnchoredPosition: {x: 1, y: -56.683277}
+  m_SizeDelta: {x: 312, y: 290.4244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821996209
 MonoBehaviour:
@@ -37449,7 +37453,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
