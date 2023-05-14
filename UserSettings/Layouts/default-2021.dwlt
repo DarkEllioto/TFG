@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 131
+  controlID: 22
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 142
+  controlID: 74
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -643,7 +643,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 26380
+  m_LastSelectedObjectID: -2174
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -705,7 +705,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 0c670000
       m_LastClickedID: 26380
-      m_ExpandedIDs: 0efbffff
+      m_ExpandedIDs: 32f6ffff82f7ffff0efbffffae6100008a620000b0620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -784,7 +784,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.8}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -993,7 +993,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.8}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Tilemap Focus
@@ -1009,9 +1009,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.387103, y: 0.4922311, z: -0.06966941}
+    m_Target: {x: 2.6957753, y: -1.2801552, z: -0.96612847}
     speed: 2
-    m_Value: {x: 3.387103, y: 0.4922311, z: -0.06966941}
+    m_Value: {x: 2.6957753, y: -1.2801552, z: -0.96612847}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1062,9 +1062,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.8940735
+    m_Target: 6.911025
     speed: 2
-    m_Value: 7.8940735
+    m_Value: 6.911025
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1222,21 +1222,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scriptableobjet
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scriptableobjet
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Ange\Documents\GitHub\TFG\TFGM\TFG
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: e86b0000
-    m_LastClickedID: 27624
+    m_SelectedIDs: d86b0000
+    m_LastClickedID: 27608
     m_ExpandedIDs: 00000000ba6b0000bc6b0000be6b0000c06b0000c26b0000c46b0000c66b0000c86b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1293,7 +1293,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000ea6e0000d87900003e780000ee74000072660000ba6300009464000016650000ea6300007e69000000000000167300005c6d0000
+    m_ExpandedInstanceIDs: c6230000ea6e0000d87900003e780000ee74000072660000ba6300009464000016650000ea6300007e690000167300005c6d000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -49,6 +49,10 @@ public class Inventario : Singleton<Inventario>
                             //Volvemos a llamar al metodo usando la recursividad para añadir las cantidades
                             AñadirItem(itemPorAñadir, diferencia);
                         }
+
+                        InventarioUI.Instance.DibujarItemEnInventario(itemPorAñadir,
+                            itemsInventario[indexes[i]].cantidad, indexes[i]);
+                        return;
                     }
                 }
             }
@@ -104,6 +108,7 @@ public class Inventario : Singleton<Inventario>
             {
                 itemsInventario[i] = item.CopiarItem();
                 itemsInventario[i].cantidad = cantidad;
+                InventarioUI.Instance.DibujarItemEnInventario(item, cantidad, i);
                 return;
             }
         }

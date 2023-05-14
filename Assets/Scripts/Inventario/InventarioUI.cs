@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventarioUI : MonoBehaviour
+public class InventarioUI : Singleton<InventarioUI>
 {
     //Creamos los campos para los slots de nuestro inventario
     [SerializeField] private InventarioSlot slotPrefab;
@@ -27,6 +27,26 @@ public class InventarioUI : MonoBehaviour
             nuevoSlot.Index = i;
             //Añadimos el nuevo slot disponible
             slotsDisponibles.Add(nuevoSlot);
+        }
+    }
+
+    //Creamos el metodo que nos permita poner imagenes en el inventario
+    public void DibujarItemEnInventario(InventarioItem itemPorAñadir,int cantidad, int itemIndex)
+    {
+        //obtenemos referencia del slot
+        InventarioSlot slot = slotsDisponibles[itemIndex];
+        //Comprobamos que el item no sea null
+        if(itemPorAñadir != null)
+        {
+            //Activamos el slot
+            slot.ActivarSlotUI(estado: true);
+            slot.ActualizarSlot(itemPorAñadir, cantidad);
+        }
+        else
+        {
+            //Desactivamos el slot
+            slot.ActivarSlotUI(estado: false);
+          
         }
     }
    
