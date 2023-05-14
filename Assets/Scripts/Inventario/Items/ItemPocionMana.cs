@@ -10,4 +10,17 @@ public class ItemPocionMana : InventarioItem
     [Header("Pocion info")]
     //Indicamos lo que podremos recuperar con esta pocion
     public float MP_restauracion;
+
+    public override bool UsarItem()
+    {
+        //Llamamos a la clase PersonajeMana
+        if (Inventario.Instance.Personaje.PersonajeMana.SePuedeRestaurar)
+        {
+            //Restauramos el mana con la pocion de mana
+            Inventario.Instance.Personaje.PersonajeMana.RestaurarMana(MP_restauracion);
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -1,21 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventario : Singleton<Inventario>
 {
-    //Creamos la variable para obtener el total de slots de nuestro inventario
-
-    [SerializeField] private int numeroDeSlots;
-
-    //Creamos la propiedad que nos permita obtener la referencia desde otras clases
-
-    public int NumeroDeSlots => numeroDeSlots;
-
-    //Creamos un array para guardar los items de nuestro inventario
     [Header("Items")]
+    //Creamos la variable para obtener el total de slots de nuestro inventario
+    [SerializeField] private int numeroDeSlots;
+    //Creamos un array para guardar los items de nuestro inventario
     [SerializeField] private InventarioItem[] itemsInventario;
+    //Creamos una referencia a nuestro personaje
+    [SerializeField] private Personaje personaje;
+
+    //Creamos las propiedades que nos permita obtener la referencia desde otras clases
+    public int NumeroDeSlots => numeroDeSlots;
     public InventarioItem[] ItemsInventario => itemsInventario;
+    public Personaje Personaje => personaje;
+
 
     private void Start()
     {
@@ -114,4 +116,62 @@ public class Inventario : Singleton<Inventario>
             }
         }
     }
+    //Creamos el metodo para eliminar el item o reducir la cantidad en caso de usarlo
+    private void EliminarItem(int index)
+    {
+        itemsInventario[index].cantidad--;
+        //Verificamos que la cantidad no queda negativa
+        if(itemsInventario[index].cantidad <= 0)
+        {
+            itemsInventario[index].cantidad = 0;
+            itemsInventario[index] = null;
+            InventarioUI.Instance.DibujarItemEnInventario(null, 0, index);
+        }
+        else
+        {
+            InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[index], itemsInventario[index].cantidad, index);
+        }
+    }
+    //Creamos el metodo para usar el item
+    private void UsarItem(int index)
+    {
+        //Verificamos que el item existe en el slot
+        if(ItemsInventario[index] == null)
+        {
+            return;
+        }
+        if (itemsInventario[index].UsarItem())
+        {
+            EliminarItem(index);
+        }
+    }
+    #region Eventos
+    //Creamos los activables para el boton usar
+    private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
+    {
+        //Creamos un switch con los tipos de interaccion posibles
+        switch (tipo)
+        {
+            case TipoDeInteraccion.Usar:
+                UsarItem(index);
+                break;
+            case TipoDeInteraccion.Equipar:
+                break;
+            case TipoDeInteraccion.Remover:
+                break;
+        }
+    }
+
+    private void OnDisable()
+    {
+        InventarioSlot.EventoSlotInteraccion -= SlotInteraccionRespuesta;
+    }
+
+    
+
+    private void OnEnable()
+    {
+        InventarioSlot.EventoSlotInteraccion += SlotInteraccionRespuesta;
+    }
+    #endregion
 }

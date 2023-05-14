@@ -37,4 +37,19 @@ public class InventarioItem : ScriptableObject
         InventarioItem nuevaInstancia = Instantiate(original: this);
         return nuevaInstancia;
     }
+    //Creamos el metodo virtual con el acceso a nuestro boton usar
+    public virtual bool UsarItem()
+    {
+        return true;
+    }
+    //Creamos el metodo virtual con el acceso a nuestro boton equipar
+    public virtual bool EquiparItem()
+    {
+        return true;
+    }
+    //Creamos el metodo virtual con el acceso a nuestro boton remover
+    public virtual bool RemoverItem()
+    {
+        return true;
+    }
 }

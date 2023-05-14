@@ -21,4 +21,4 @@ MonoBehaviour:
   esAcumulable: 1
   AcumulacionMax: 25
   cantidad: 0
-  MP_restauracion: 0
+  MP_restauracion: 15

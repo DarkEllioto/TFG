@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using UnityEngine.EventSystems;
+
 public class InventarioUI : Singleton<InventarioUI>
 {
     //Creamos un header para el panel inventario
@@ -17,11 +19,16 @@ public class InventarioUI : Singleton<InventarioUI>
     [SerializeField] private Transform contenedor;
 
     //Creamos una lista para poder guardar todos los slots creados y saber cuales estan libres
+    public InventarioSlot SlotSeleccionado { get;private set; }
     List<InventarioSlot> slotsDisponibles = new List<InventarioSlot>();
     // Start is called before the first frame update
     void Start()
     {
         InicializarInventario();
+    }
+    private void Update()
+    {
+        ActualizarSlotSeleccionado();
     }
 
     //Inicializamos el inventario
@@ -37,7 +44,22 @@ public class InventarioUI : Singleton<InventarioUI>
             slotsDisponibles.Add(nuevoSlot);
         }
     }
-
+    //Creamos un metodo para actualizar el slot seleccionado
+    private void ActualizarSlotSeleccionado()
+    {
+        GameObject goSeleccionado = EventSystem.current.currentSelectedGameObject;
+       //Comprobamos que el slot seleccionado no esta vacio
+        if(goSeleccionado == null)
+        {
+            return;
+        }
+        //Guardamos el slot en una variable para pasarselo a la variable slotseleccionado
+        InventarioSlot slot = goSeleccionado.GetComponent<InventarioSlot>();
+        if(slot != null)
+        {
+            SlotSeleccionado = slot;
+        }
+    }
     //Creamos el metodo que nos permita poner imagenes en el inventario
     public void DibujarItemEnInventario(InventarioItem itemPorAñadir,int cantidad, int itemIndex)
     {
@@ -61,7 +83,7 @@ public class InventarioUI : Singleton<InventarioUI>
     private void ActualizarInventarioDescripcion(int index)
     {
         //Comprobamos que no sea null
-        if(Inventario.Instance.ItemsInventario[index] != null)
+        if (Inventario.Instance.ItemsInventario[index] != null)
         {
             //Referenciamos imagen, nombre del objeto y descripcion
             itemIcono.sprite = Inventario.Instance.ItemsInventario[index].Icono;
@@ -76,12 +98,24 @@ public class InventarioUI : Singleton<InventarioUI>
             panelInventarioDescripcion.SetActive(false);
         }
     }
-    //Creamos la igualdad para el evento
+    //Creamos un nuevo metodo que permita llamar al metodo para usar el item
+    public void UsarItem()
+    {
+        if (SlotSeleccionado != null)
+        {
+            SlotSeleccionado.SlotUsarItem();
+            SlotSeleccionado.SeleccionarSlot();
+        }
+    }
+
     
-    private void SlotInteraccionRespuesta(TipoDeInteraccion tipo,int index)
+    #region Evento
+    //Creamos la igualdad para el evento
+
+    private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
     {
         //Nos aseguramos de estar llamando a un evento de tipo click
-        if( tipo == TipoDeInteraccion.Click)
+        if (tipo == TipoDeInteraccion.Click)
         {
             //Referenciamos los gameobject
             ActualizarInventarioDescripcion(index);
@@ -99,5 +133,9 @@ public class InventarioUI : Singleton<InventarioUI>
     {
         InventarioSlot.EventoSlotInteraccion -= SlotInteraccionRespuesta;
     }
+
+    #endregion
+    
+   
 
 }

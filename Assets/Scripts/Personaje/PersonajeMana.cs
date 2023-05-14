@@ -10,7 +10,7 @@ public class PersonajeMana : MonoBehaviour
     [SerializeField] private float RegenPSec;
     //Creamos geter/seter para obtener el mana actual
     public float ManaActual { get; private set; }
-
+    public bool SePuedeRestaurar => ManaActual < manaMax;
     //Obtenemos una referencia de la clase vida para comprobar que nuestro personaje no esta muerto
     private PersonajeVida _personajeVida;
 
@@ -52,6 +52,23 @@ public class PersonajeMana : MonoBehaviour
             ActualizarBarraMana();
         }
     }
+    //Creamos el metodo para restaurar mana
+    public void RestaurarMana(float Cantidad)
+    {
+        if(ManaActual >= manaMax)
+        {
+            return;
+        }
+
+        ManaActual += Cantidad;
+        if(ManaActual > manaMax)
+        {
+            ManaActual = manaMax;
+        }
+
+        UIManager.Instance.ActualizarManaPersonaje(ManaActual, manaMax);
+    }
+
     //Creamos la clase para regenerar mana de forma automatica
     private void RegenerarMana()
     {
