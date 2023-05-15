@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Waypoint.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Estado.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMana.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionDetectarPersonaje.cs" />
@@ -73,17 +74,23 @@
     <Compile Include="Assets\Scripts\Personaje\PersonajeExperiencia.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Controller.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Decision.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionVida.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionMana.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioUI.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoMovimiento.cs" />
+    <Compile Include="Assets\Scripts\Inventario\ItemPorAgregar.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMover.cs" />
     <Compile Include="Assets\Scripts\Extras\TextoAnimacion.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Transicion.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionActivarCaminoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeVida.cs" />
+    <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />
     <Compile Include="Assets\Scripts\Extras\AtributoButton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeStats.cs" />
+    <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
   </ItemGroup>

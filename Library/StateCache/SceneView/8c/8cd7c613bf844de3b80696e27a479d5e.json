@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":22.07846450805664,"y":7.232275485992432,"z":-18.268871307373048},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":31.626699447631837,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-14.10949420928955,"y":20.63721466064453,"z":-17.407567977905275},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":46.094051361083987,"orthographic":true}
+>>>>>>> pruebas
