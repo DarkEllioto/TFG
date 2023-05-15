@@ -379,6 +379,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Extras/AtributoButton.cs"
 "Assets/Scripts/Extras/ObjectPooler.cs"
+"Assets/Scripts/Extras/Portal.cs"
 "Assets/Scripts/Extras/Singleton.cs"
 "Assets/Scripts/Extras/TextoAnimacion.cs"
 "Assets/Scripts/Extras/ZonaConfiner.cs"
