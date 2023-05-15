@@ -8,14 +8,21 @@
     {
       "FullName": "PsdPlugin, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "LastWriteTime": "2023-05-06T11:29:13.4947117Z"
 =======
       "LastWriteTime": "2023-05-13T14:22:57.7234181Z"
+=======
+      "LastWriteTime": "2023-05-14T12:10:19.0615506Z"
+>>>>>>> maryu2023
     },
     {
       "FullName": "mscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2022-10-27T21:20:46Z"
+<<<<<<< HEAD
 >>>>>>> pruebas
+=======
+>>>>>>> maryu2023
     },
     {
       "FullName": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -24,10 +31,14 @@
     {
       "FullName": "Unity.2D.Animation.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "LastWriteTime": "2023-05-06T11:29:13.7296692Z"
 =======
       "LastWriteTime": "2023-05-13T14:22:57.7304195Z"
 >>>>>>> pruebas
+=======
+      "LastWriteTime": "2023-05-14T12:10:19.0685521Z"
+>>>>>>> maryu2023
     },
     {
       "FullName": "netstandard, Version=2.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
@@ -36,10 +47,14 @@
     {
       "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "LastWriteTime": "2023-05-06T11:29:13.425974Z"
 =======
       "LastWriteTime": "2023-05-13T14:22:57.7634266Z"
 >>>>>>> pruebas
+=======
+      "LastWriteTime": "2023-05-14T12:10:19.091132Z"
+>>>>>>> maryu2023
     },
     {
       "FullName": "UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -47,6 +62,7 @@
     },
     {
       "FullName": "Unity.2D.Common.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "LastWriteTime": "2023-05-06T11:29:13.4642464Z"
     },
@@ -60,6 +76,13 @@
       "FullName": "Unity.2D.SpriteShape.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-05-13T14:22:57.7504242Z"
 >>>>>>> pruebas
+=======
+      "LastWriteTime": "2023-05-14T12:10:19.0695435Z"
+    },
+    {
+      "FullName": "Unity.2D.SpriteShape.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-05-14T12:10:19.0815718Z"
+>>>>>>> maryu2023
     },
     {
       "FullName": "UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -68,18 +91,23 @@
     {
       "FullName": "Unity.2D.Common.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "LastWriteTime": "2023-05-06T11:29:13.4771736Z"
+=======
+      "LastWriteTime": "2023-05-14T12:10:19.0705516Z"
+>>>>>>> maryu2023
     },
     {
       "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2023-05-06T11:29:13.4601071Z"
+      "LastWriteTime": "2023-05-14T12:10:19.0986566Z"
     },
     {
       "FullName": "Unity.2D.Psdimporter.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "LastWriteTime": "2023-05-06T11:29:13.4566113Z"
+      "LastWriteTime": "2023-05-14T12:10:19.0775697Z"
     },
     {
       "FullName": "Unity.2D.Animation.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< HEAD
       "LastWriteTime": "2023-05-06T11:29:13.4747024Z"
     },
     {
@@ -100,6 +128,9 @@
       "FullName": "Unity.2D.Animation.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-05-13T14:22:57.7284191Z"
 >>>>>>> pruebas
+=======
+      "LastWriteTime": "2023-05-14T12:10:19.0665426Z"
+>>>>>>> maryu2023
     }
   ],
   "Functions": [
@@ -163,6 +194,7 @@
         10,
         11,
 <<<<<<< HEAD
+<<<<<<< HEAD
         2,
         12,
         3
@@ -171,6 +203,10 @@
         5,
         12
 >>>>>>> pruebas
+=======
+        3,
+        12
+>>>>>>> maryu2023
       ]
     },
     {
@@ -193,9 +229,13 @@
       "AssemblyDependencyIndices": [
         14,
 <<<<<<< HEAD
+<<<<<<< HEAD
         2,
 =======
 >>>>>>> pruebas
+=======
+        3,
+>>>>>>> maryu2023
         12,
         3,
         6,
@@ -213,11 +253,14 @@
         0,
         13,
 <<<<<<< HEAD
+<<<<<<< HEAD
         15,
         2,
         12,
 =======
 >>>>>>> pruebas
+=======
+>>>>>>> maryu2023
         3,
         12
       ]
@@ -241,11 +284,16 @@
       "AssemblyDependencyIndices": [
         8,
 <<<<<<< HEAD
+<<<<<<< HEAD
         2,
+=======
+        3,
+>>>>>>> maryu2023
         12,
         6,
         7,
         0,
+<<<<<<< HEAD
         5,
         3
 =======
@@ -256,6 +304,9 @@
         6,
         5
 >>>>>>> pruebas
+=======
+        5
+>>>>>>> maryu2023
       ]
     },
     {

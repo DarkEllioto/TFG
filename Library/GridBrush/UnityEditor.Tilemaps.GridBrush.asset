@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Cells:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_Tile: {fileID: 11400000, guid: 35bdd2a4b214cc144ab5845eac3d004e, type: 2}
 =======
   - m_Tile: {fileID: 0}
 >>>>>>> pruebas
+=======
+  - m_Tile: {fileID: 11400000, guid: 98f0ce2d89e5c1f438f4d65b6c65c15d, type: 2}
+>>>>>>> maryu2023
     m_Matrix:
       e00: 1
       e01: 0
