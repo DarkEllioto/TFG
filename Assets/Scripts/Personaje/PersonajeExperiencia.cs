@@ -20,7 +20,7 @@ public class PersonajeExperiencia : MonoBehaviour
    
 
     //Creamos varias variables para controlar la experiencia
-    private float expActualTemp;
+   
     private float expRequeridaSiguienteNivel;
     private float expActual;
 
@@ -41,7 +41,7 @@ public class PersonajeExperiencia : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            AñadirExp(10f);
+            AñadirExp(6f);
         }
         
     }
@@ -51,36 +51,26 @@ public class PersonajeExperiencia : MonoBehaviour
     public void AñadirExp( float expObtenida)
     {
         
-        //Comprobamos que la experiencia recibida es mayor a 0
-        if (expObtenida > 0f)
+        //Verificamos que la exp no sea 0
+        if(expObtenida <= 0)
         {
-            //Creamos una nueva variable para calcular la exp requerida para el siguiente nivel
-            float expRestanteNuevoNivel = expRequeridaSiguienteNivel - expActualTemp;
-            //Comprobamos si con la experiencia obtenida subimos de nivel
-            if (expObtenida >= expRestanteNuevoNivel)
-            {
-                expObtenida -= expRestanteNuevoNivel;
-                expActual = 0;
-                expActual += expObtenida;
-                ActualizarNivel();
-                //Utilizamos recursion para añadir la experiencia que nos sobro al restar la requerida
-                AñadirExp(expObtenida);
-            }
-            else
-            {
-                //Si por el contrario no subimos de nivel almacenamos dicha experiencia
-
-                expActual += expObtenida;
-                expActualTemp += expObtenida;
-                //Y si al actualizar dicha exp topamos con el limite, actualizamos nivel
-                if(expActualTemp == expRequeridaSiguienteNivel)
-                {
-                    ActualizarNivel();
-                }
-            }
+            return;
         }
-        //Actualizamos la barra de experiencia
+        expActual += expObtenida;
+        //Mostramos la experiencia actual
         stats.ExpActual = expActual;
+
+        //Comprobamos si hemos igualado la experiencia requerida
+        if(expActual == expRequeridaSiguienteNivel)
+        {
+            ActualizarNivel();
+        }
+        else if (expActual > expRequeridaSiguienteNivel)
+        {
+            float diff = expActual - expRequeridaSiguienteNivel;
+            ActualizarNivel();
+            AñadirExp(diff);
+        }
         ActualizarBarraExp();
     }
 
@@ -92,8 +82,8 @@ public class PersonajeExperiencia : MonoBehaviour
         {
             //Subimos de nivel
             stats.Nivel++;
-            //Actualizamos la experiencia actual
-            expActualTemp = 0f;
+            stats.ExpActual = 0;
+            expActual = 0;
             //Actualizamos la experiencia para el siguiente nivel
             expRequeridaSiguienteNivel *= valorIncremental;
             //Actualizamos en nuestro panel de estadisticas la experiencia requerida
@@ -106,6 +96,6 @@ public class PersonajeExperiencia : MonoBehaviour
     //Creamos un metodo para actualizar la barra de experiencia
     private void ActualizarBarraExp()
     {
-        UIManager.Instance.ActualizarExpPersonaje(expActualTemp,expRequeridaSiguienteNivel);
+        UIManager.Instance.ActualizarExpPersonaje(expActual,expRequeridaSiguienteNivel);
     }
 }
