@@ -663,7 +663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_28
+      name: Bultos
       rect:
         serializedVersion: 2
         x: 67
@@ -768,7 +768,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_33
+      name: Planta
       rect:
         serializedVersion: 2
         x: 0
@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_35
+      name: Silla
       rect:
         serializedVersion: 2
         x: 7
@@ -852,7 +852,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_38
+      name: Mesa
       rect:
         serializedVersion: 2
         x: 48
@@ -1293,7 +1293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_59
+      name: Escalera
       rect:
         serializedVersion: 2
         x: 97
@@ -1460,6 +1460,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EstVacia
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 98
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22d63b8df9a5964486534c06d262ec8
+      internalID: -605255424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstLlena
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 98
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a50f01c0d72f0e4eab48214072fdb32
+      internalID: 1230481555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cajonera
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 97
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f3c187aad68624d90853e3e0208679
+      internalID: 2050921910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1471,15 +1534,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetElement_39: 1509482484
+      TilesetElement_34: -716054378
       TilesetElement_21: 288060687
       TilesetElement_60: -675222612
       TilesetElement_6: 2126356037
       TilesetElement_8: 2138590677
       TilesetElement_44: -251272737
-      TilesetElement_2: -1307946438
       TilesetElement_14: -363541220
       TilesetElement_15: -553235915
+      Escalera: -1326395961
       TilesetElement_19: 1035417444
       TilesetElement_12: 845253734
       TilesetElement_30: 289487805
@@ -1491,35 +1554,35 @@ TextureImporter:
       TilesetElement_31: 1800277713
       TilesetElement_36: -325012601
       TilesetElement_37: -353990470
+      Silla: 1134716486
+      Cajonera: 2050921910
       TilesetElement_27: 1717906108
       TilesetElement_61: 295909380
       TilesetElement_18: -2105261861
+      Planta: 1515246960
       TilesetElement_64: 690172969
       TilesetElement_0: 113996940
       TilesetElement_47: -1959143090
       TilesetElement_51: -992450489
       TilesetElement_10: -725292376
       TilesetElement_32: -1315282683
-      TilesetElement_28: 1684612963
-      TilesetElement_46: 806351894
       TilesetElement_17: 526769076
+      TilesetElement_46: 806351894
       TilesetElement_66: 552363086
       TilesetElement_23: -581583041
       TilesetElement_45: -1610633848
       TilesetElement_50: -952860976
       TilesetElement_22: 1802191688
       TilesetElement_52: -623147519
+      Mesa: -1831310353
+      EstVacia: -1307946438
       TilesetElement_65: -1760749944
       TilesetElement_20: -1365587101
-      TilesetElement_55: 259736566
       TilesetElement_29: -665889531
-      TilesetElement_59: -1326395961
-      TilesetElement_38: -1831310353
+      TilesetElement_55: 259736566
       valla: -1229307037
       TilesetElement_26: -1936692848
-      TilesetElement_35: 1134716486
       TilesetElement_41: -1232976974
-      TilesetElement_33: 1515246960
       TilesetElement_62: -35415448
       TilesetElement_16: 1875551446
       TilesetElement_25: 30546461
@@ -1528,16 +1591,18 @@ TextureImporter:
       TilesetElement_4: -1529606208
       TilesetElement_1: -476664199
       TilesetElement_49: 1709840865
+      Bultos: 1684612963
       TilesetElement_13: 133069452
       TilesetElement_54: 681795642
       TilesetElement_7: 912386542
       TilesetElement_57: 408379476
+      EstLlena: 1230481555
       TilesetElement_42: 1275630185
       TilesetElement_53: 762792914
       TilesetElement_63: 965392940
       TilesetElement_43: -2081168749
       TilesetElement_58: 829886116
-      TilesetElement_34: -716054378
+      TilesetElement_39: 1509482484
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
