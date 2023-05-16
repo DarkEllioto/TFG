@@ -145,6 +145,26 @@ public class Inventario : Singleton<Inventario>
             EliminarItem(index);
         }
     }
+    //Creamos el metodo para mover item
+    public void MoverItem(int indexInicial, int indexFinal)
+    {
+        if(itemsInventario[indexInicial] == null || itemsInventario[indexFinal] != null)
+        {
+            return;
+        }
+        //Creamos la logica para mover el item
+
+        //Copiamos el item en el slot final
+
+        InventarioItem itemPorMover = itemsInventario[indexInicial].CopiarItem();
+        itemsInventario[indexFinal] = itemPorMover;
+        InventarioUI.Instance.DibujarItemEnInventario(itemPorMover, itemPorMover.cantidad, indexFinal);
+
+        //Borramos el item del slot inicial
+
+        itemsInventario[indexInicial] = null;
+        InventarioUI.Instance.DibujarItemEnInventario(null,0,indexInicial);
+    }
     #region Eventos
     //Creamos los activables para el boton usar
     private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)

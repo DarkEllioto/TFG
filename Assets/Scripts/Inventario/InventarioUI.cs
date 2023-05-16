@@ -21,14 +21,27 @@ public class InventarioUI : Singleton<InventarioUI>
     //Creamos una lista para poder guardar todos los slots creados y saber cuales estan libres
     public InventarioSlot SlotSeleccionado { get;private set; }
     List<InventarioSlot> slotsDisponibles = new List<InventarioSlot>();
+
+    //Creamos una propiedad para poder mover los objetos
+    public int IndexSlotPorMover { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
         InicializarInventario();
+        IndexSlotPorMover = -1;
     }
     private void Update()
     {
         ActualizarSlotSeleccionado();
+        //Verificamos que estemos moviendo la tecla para mover
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            //Comprobamos si hay un slot seleccionado
+            if(SlotSeleccionado != null)
+            {
+                IndexSlotPorMover = SlotSeleccionado.Index;
+            }
+        }
     }
 
     //Inicializamos el inventario
