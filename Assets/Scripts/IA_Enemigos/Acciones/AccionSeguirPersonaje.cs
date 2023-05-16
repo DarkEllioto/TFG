@@ -18,6 +18,12 @@ public class AccionSeguirPersonaje : IA_Accion
         {
             return;
         }
+
+        //Comprobamos que el personaje no haya sido derrotado
+        if (controller.PersonajeReferencia.GetComponent<PersonajeVida>().PersonajeKO)
+        {
+            return;
+        }
         // SI SE DETECTA AL PERSONAJE SE OBTIENE LA POCISION 
         Vector3 dirHaciaPersonaje = controller.PersonajeReferencia.position - controller.transform.position;
         Vector3 direccion = dirHaciaPersonaje.normalized;

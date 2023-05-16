@@ -20,8 +20,8 @@ public class IA_Controller : MonoBehaviour
 
     //SE DECLARA UNA VARIABLE PARA VER CON QUE ESTADO INICIA UN ENEMIGO
     //EL HEADER ES PARA MEJORAR Y ORDENAR EL INSPECTOR
-     [Header("Estados")]
-     [SerializeField] private IA_Estado estadoInicial;
+    [Header("Estados")]
+    [SerializeField] private IA_Estado estadoInicial;
     [SerializeField] private IA_Estado estadoDefault;
 
     
@@ -29,8 +29,8 @@ public class IA_Controller : MonoBehaviour
     [SerializeField] private float rangoDeteccion;//VARIABLE DE RANGO DE DETENCION
     [SerializeField] private float rangoDeAtaque; //RANGO DE ATAQUE
     [SerializeField] private float rangoDeEmbestida;//RANGO DE EMBESTIDA
-     [SerializeField] private float velocidadMovimiento;//VATIABLE VELOCIDAD DEL MOVIMIENTO DEL ENEMIGO 
-     [SerializeField] private float velocidadDeEmbestida;//VELOCIDAD DE EMBESTIDA
+    [SerializeField] private float velocidadMovimiento;//VATIABLE VELOCIDAD DEL MOVIMIENTO DEL ENEMIGO 
+    [SerializeField] private float velocidadDeEmbestida;//VELOCIDAD DE EMBESTIDA
     [SerializeField] private LayerMask personajeLayerMask; //LEYER DEL PERSONAJE A DETECTAR 
 
     [Header("Ataque")] //VARIABLES PARA ATAQUES Y DAÑO 
@@ -41,7 +41,7 @@ public class IA_Controller : MonoBehaviour
     [Header("Debug")] 
     [SerializeField] private bool mostrarDeteccion;  //VARIABLE PARA MOSTRAR
     [SerializeField] private bool mostrarRangoAtaque; //VARIABLE PARA RANGO DE ATAQUE
-       [SerializeField] private bool mostrarRangoEmbestida;//mostrar el rango de embestida
+    [SerializeField] private bool mostrarRangoEmbestida;//mostrar el rango de embestida
     
 
      private float tiempoParaSiguienteAtaque; //VARIABLE TIEMPO DE UN ATAQUE A OTRO
@@ -51,14 +51,14 @@ public class IA_Controller : MonoBehaviour
     //SE CREAN PROPIEDADES PARA GUARDAR 
     public Transform PersonajeReferencia { get; set; }
     public IA_Estado EstadoActual { get; set; }
-     public EnemigoMovimiento EnemigoMovimiento { get; set; }
+    public EnemigoMovimiento EnemigoMovimiento { get; set; }
     public float RangoDeteccion => rangoDeteccion;
     // public float RangoDeAtaque => rangoDeAtaque;
     public float Daño =>daño;
     public TiposDeAtaque TipoAtaque => tipoAtaque;
     public float VelocidadMovimiento => velocidadMovimiento;
     public LayerMask PersonajeLayerMask => personajeLayerMask;
-     public float RangoDeAtaqueDeterminado => tipoAtaque == TiposDeAtaque.Embestida ? rangoDeEmbestida : rangoDeAtaque; //SE GUARDA EL TIPO DE ATAQUE, SE VERIFICA QUE TIPO DE ATAQUE SE ESTA EJECUTANDO. 
+    public float RangoDeAtaqueDeterminado => tipoAtaque == TiposDeAtaque.Embestida ? rangoDeEmbestida : rangoDeAtaque; //SE GUARDA EL TIPO DE ATAQUE, SE VERIFICA QUE TIPO DE ATAQUE SE ESTA EJECUTANDO. 
 
 
 

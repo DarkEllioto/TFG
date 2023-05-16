@@ -82,6 +82,11 @@ public class PersonajeAnimaciones : MonoBehaviour
             //Setteamos la animacion de muerte
             _animator.SetBool(Muerte, true);
         }
+        else
+        {
+            ActivarLayer(LayerIdle);
+            _animator.SetBool(Muerte, true);
+        }
     }
     //Creamos un nuevo metodo para que nuestro personaje recupere la animacion principal al renacer
     public void RevivirPersonaje()

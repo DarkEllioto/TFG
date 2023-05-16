@@ -17,12 +17,15 @@ public class PersonajeMover : MonoBehaviour
     public Vector2 DireccionMovimiento => _direccionMov;
     //Creamos una propiedad booleana que nos diga si estamos en movimiento
     public bool EnMov => _direccionMov.magnitude > 0f;
-   
+    //Tomamos una referencia para saber si nuestro personaje esta vivo
+    private PersonajeVida personajeVida;
     //Creamos el metodo para obtener la referencia del rigidbody
     private void Awake()
     {
         //Llamamos al rigidbody
         _RigidBody2D = GetComponent<Rigidbody2D>();
+        //Llamamos al personaje vida
+        personajeVida = GetComponent<PersonajeVida>();
     }
     void Start()
     {
@@ -32,6 +35,11 @@ public class PersonajeMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (personajeVida.PersonajeKO)
+        {
+            _direccionMov = Vector2.zero;
+            return;
+        }
         //Obtenemos el axis de movimiento horizontal
         _input = new Vector2(x:Input.GetAxisRaw("Horizontal"),y:Input.GetAxisRaw("Vertical"));
 

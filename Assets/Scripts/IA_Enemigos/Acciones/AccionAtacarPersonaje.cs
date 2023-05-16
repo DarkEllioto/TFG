@@ -19,6 +19,12 @@ public class AccionAtacarPersonaje : IA_Accion
         {
             return; //REGRESAMOS
         }
+
+        //Comprobamos que el personaje no haya sido derrotado
+        if (controller.PersonajeReferencia.GetComponent<PersonajeVida>().PersonajeKO)
+        {
+            return;
+        }
         //SI EL TIEMPO DE ATAQUE ES FALSE 
         if (controller.EsTiempoDeAtacar() == false)
         {
