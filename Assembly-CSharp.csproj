@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioUI.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />
+    <Compile Include="Assets\Scripts\Extras\Portal.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Inventario\ItemPorAgregar.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />

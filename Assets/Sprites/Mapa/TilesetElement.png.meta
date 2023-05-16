@@ -642,7 +642,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_27
+      name: carreta
       rect:
         serializedVersion: 2
         x: 36
@@ -1469,7 +1469,7 @@ TextureImporter:
         width: 32
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1490,7 +1490,7 @@ TextureImporter:
         width: 32
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1511,7 +1511,7 @@ TextureImporter:
         width: 31
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1534,10 +1534,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetElement_34: -716054378
+      TilesetElement_39: 1509482484
       TilesetElement_21: 288060687
       TilesetElement_60: -675222612
       TilesetElement_6: 2126356037
+      carreta: 1717906108
       TilesetElement_8: 2138590677
       TilesetElement_44: -251272737
       TilesetElement_14: -363541220
@@ -1556,7 +1557,6 @@ TextureImporter:
       TilesetElement_37: -353990470
       Silla: 1134716486
       Cajonera: 2050921910
-      TilesetElement_27: 1717906108
       TilesetElement_61: 295909380
       TilesetElement_18: -2105261861
       Planta: 1515246960
@@ -1573,9 +1573,9 @@ TextureImporter:
       TilesetElement_45: -1610633848
       TilesetElement_50: -952860976
       TilesetElement_22: 1802191688
-      TilesetElement_52: -623147519
       Mesa: -1831310353
       EstVacia: -1307946438
+      TilesetElement_52: -623147519
       TilesetElement_65: -1760749944
       TilesetElement_20: -1365587101
       TilesetElement_29: -665889531
@@ -1602,7 +1602,7 @@ TextureImporter:
       TilesetElement_63: 965392940
       TilesetElement_43: -2081168749
       TilesetElement_58: 829886116
-      TilesetElement_39: 1509482484
+      TilesetElement_34: -716054378
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
