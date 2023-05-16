@@ -6,6 +6,7 @@ public class Waypoint : MonoBehaviour
 {
 
      [SerializeField] private Vector3[] puntos;
+
     public Vector3[] Puntos => puntos;
 
     public Vector3 PosicionActual { get; set; }

@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Personaje\Editor\PersonajeStatsEditor.cs" />
+    <Compile Include="Assets\Scripts\Personaje\Editor\WaypointEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
