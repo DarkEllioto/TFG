@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 
 //Heredamos la instancia UIManager desde el singleton 
 public class UIManager : Singleton<UIManager>
@@ -154,12 +156,28 @@ public class UIManager : Singleton<UIManager>
     {
         //SE LLAMA AL PANEL Y LO QUE HACE ES DEVOLVER O CAMBIAR EL ESTADO DE ESTA ES DECIR ACTIVARLO O DESACTIVARLO
         panelTienda.SetActive(!panelTienda.activeSelf);
+       
     }
 
     //Creamos el metodo para abrir y cerrar el panel inventario
     public void AbrirCerrarInventario()
     {
         panelInventario.SetActive(!panelInventario.activeSelf);
+    }
+
+    public void AbrirPanelInteraccion(InteraccionExtraNPC tipoInteraccion)
+    {
+        switch (tipoInteraccion)
+        {
+            /*case InteraccionExtraNPC.Quests:
+                AbrirCerrarPanelInspectorQuests();
+                break;*/
+            case InteraccionExtraNPC.Tienda:
+                AbrirCerrarPanelTienda();
+                break;
+           /* case InteraccionExtraNPC.Crafting:
+                break;*/
+        }
     }
     #endregion
 }
