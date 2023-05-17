@@ -726,7 +726,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetNature_32
+      name: cristal1
       rect:
         serializedVersion: 2
         x: 0
@@ -747,7 +747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetNature_33
+      name: cristal2
       rect:
         serializedVersion: 2
         x: 16
@@ -768,7 +768,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetNature_34
+      name: cristal3
       rect:
         serializedVersion: 2
         x: 32
@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetNature_35
+      name: cristal 4
       rect:
         serializedVersion: 2
         x: 48
@@ -1019,6 +1019,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: arboldesert
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 209
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0785013ed12eb645bf91680a9ab9b63
+      internalID: -1490668526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arboldesert2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 257
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054c7e69e27cb5846a93bd6f78db2150
+      internalID: -468382457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roca1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2623d13f451eace4c850a5dacc83cb70
+      internalID: 1108839262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1034,46 +1097,49 @@ TextureImporter:
       TilesetNature_25: 798102813
       TilesetNature_21: -656761371
       TilesetNature_23: 951214321
+      cristal1: 1990248457
       TilesetNature_13: -1740899100
       TilesetNature_31: -183206775
+      roca1: 1108839262
       TilesetNature_28: -1995180859
       TilesetNature_24: 1626609578
       TilesetNature_4: 1880973999
       TilesetNature_10: 1970110661
       TilesetNature_17: 1441522809
+      arboldesert: -1490668526
       Arbol_01: -1278191873
       TilesetNature_37: 2005339741
-      TilesetNature_33: -894620810
-      TilesetNature_32: 1990248457
       TilesetNature_39: -456488346
       TilesetNature_27: -122456174
       TilesetNature_5: 1219900301
       TilesetNature_29: -1849149724
       TilesetNature_3: 907810064
       Arbol_Grande_01: -777899214
+      cristal2: -894620810
       Arbol_Grande_02: 1989303195
       TilesetNature_22: 561090774
       TilesetNature_30: 779769016
       TilesetNature_40: 765235573
+      cristal 4: -1001168340
       TilesetNature_14: -1170305051
       Arbol_04: -1938761206
       TilesetNature_7: 89839755
       Arbol_03: -643164013
       TilesetNature_6: -1916818023
       TilesetNature_19: -909148871
-      TilesetNature_35: -1001168340
+      arboldesert2: -468382457
       TilesetNature_36: -2055770588
       TilesetNature_20: -1045931470
       TilesetNature_11: 603113727
       TilesetNature_26: -640372628
       Arbol_02: -1759781965
+      cristal3: 1670686949
       TilesetNature_12: -1588061081
       TilesetNature_8: -845577268
       TilesetNature_38: 1837698315
       TilesetNature_18: -1958364876
       TilesetNature_16: -614782345
       TilesetNature_15: -961361264
-      TilesetNature_34: 1670686949
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -76,7 +76,9 @@
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Decision.cs" />
     <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionVida.cs" />
     <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionMana.cs" />
+    <Compile Include="Assets\Scripts\Dialogo\NPCDialogo.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
+    <Compile Include="Assets\Scripts\Dialogo\NPCInteraccion.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioUI.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />
     <Compile Include="Assets\Scripts\Extras\Portal.cs" />
