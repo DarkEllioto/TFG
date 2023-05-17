@@ -415,7 +415,7 @@
 "Assets/Scripts/Personaje/PersonajeStats.cs"
 "Assets/Scripts/Personaje/PersonajeVida.cs"
 "Assets/Scripts/Personaje/VidaBase.cs"
-"Assets/Waypoint/NPCmovimiento.cs"
+"Assets/Waypoint/NPCMovimiento.cs"
 "Assets/Waypoint/Waypoint.cs"
 "Assets/Waypoint/WaypointMovimiento.cs"
 -langversion:9.0
