@@ -15,7 +15,7 @@ public class NPCInteraccion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //DialogoManager.Instance.NPCDisponible = this;
+            DialogoManager.Instance.NPCDisponible = this;
             npcButtonInteractuar.SetActive(true);
         }
     }
@@ -24,7 +24,7 @@ public class NPCInteraccion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           // DialogoManager.Instance.NPCDisponible = null;
+            DialogoManager.Instance.NPCDisponible = null;
             npcButtonInteractuar.SetActive(false);
         }
     }
