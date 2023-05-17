@@ -13,6 +13,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Paneles")]
     [SerializeField] private GameObject panelStat;
+    [SerializeField] private GameObject panelTienda;
     [SerializeField] private GameObject panelInventario;
 
     //Creamos unas referencias para obtener la imagen de la vida,el mana, exp y el texto
@@ -31,11 +32,11 @@ public class UIManager : Singleton<UIManager>
 
     //Creamos un header para los stats y  vamos creamos su campo de texto
     [Header("Stats")]
-    [SerializeField] private TextMeshProUGUI statDañoTMP;
+    [SerializeField] private TextMeshProUGUI statDaÃ±oTMP;
     [SerializeField] private TextMeshProUGUI statNivelTMP;
     [SerializeField] private TextMeshProUGUI statDefensaTMP;
     [SerializeField] private TextMeshProUGUI statCriticoTMP;
-    [SerializeField] private TextMeshProUGUI statDañoCriticoTMP;
+    [SerializeField] private TextMeshProUGUI statDaÃ±oCriticoTMP;
     [SerializeField] private TextMeshProUGUI statEsquivarTMP;
     [SerializeField] private TextMeshProUGUI statBloquearTMP;
     [SerializeField] private TextMeshProUGUI statAgilidadTMP;
@@ -95,19 +96,19 @@ public class UIManager : Singleton<UIManager>
         {
             return;
         }
-        //Añadimos el texto a los stats
-        statDañoTMP.text = stats.Daño.ToString();
+        //Aï¿½adimos el texto a los stats
+        statDaÃ±oTMP.text = stats.DaÃ±o.ToString();
         statDefensaTMP.text = stats.Defensa.ToString();
         statExpTMP.text = stats.ExpActual.ToString();
         statSigNivelTMP.text = stats.ExpRequerida.ToString();
         statAgilidadTMP.text = stats.Agilidad.ToString();
         statNivelTMP.text = stats.Nivel.ToString();
-        statDañoCriticoTMP.text = $"{stats.DCritico}%";
+        statDaÃ±oCriticoTMP.text = $"{stats.DCritico}%";
         statCriticoTMP.text = $"{stats.Critico}%";
         statEsquivarTMP.text = $"{stats.Esquivar}%";
         statBloquearTMP.text = $"{stats.Bloquear}%";
 
-        //Añadimos texto a los atributos
+        //Aï¿½adimos texto a los atributos
 
         AtributoDestrezaTMP.text = stats.Destreza.ToString();
         AtributoDefensaTMP.text = stats.Defensa2.ToString();
@@ -146,6 +147,13 @@ public class UIManager : Singleton<UIManager>
     {
         //llamamos al panel stats para activarlo o desactivarlo, si esta activo nos devuelve true
         panelStat.SetActive(!panelStat.activeSelf);
+    }
+
+      //SE CREA EL METODO ABRIR CERRAR EL PANEL DE LA TIENDA
+    public void AbrirCerrarPanelTienda()
+    {
+        //SE LLAMA AL PANEL Y LO QUE HACE ES DEVOLVER O CAMBIAR EL ESTADO DE ESTA ES DECIR ACTIVARLO O DESACTIVARLO
+        panelTienda.SetActive(!panelTienda.activeSelf);
     }
 
     //Creamos el metodo para abrir y cerrar el panel inventario
