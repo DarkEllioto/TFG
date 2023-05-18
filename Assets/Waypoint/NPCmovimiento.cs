@@ -8,6 +8,7 @@ public class NPCMovimiento : WaypointMovimiento
     [SerializeField] private DireccionMovimiento direccion;
 
     private readonly int caminarAbajo = Animator.StringToHash("CaminarAbajo");
+
     
     protected override void RotarPersonaje()
     {
