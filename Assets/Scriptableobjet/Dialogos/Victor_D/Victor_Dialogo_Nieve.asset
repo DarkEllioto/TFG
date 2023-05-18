@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7852d91b5aa9b474394428aebc9ed708, type: 3}
+  m_Name: Victor_Dialogo_Nieve
+  m_EditorClassIdentifier: 
+  Nombre: Victor
+  Icono: {fileID: 2104184152, guid: 39712ff7ccc72f945b95a4a7bce05976, type: 3}
+  ContieneInteraccionExtra: 0
+  InteraccionExtra: 0
+  Saludo: Bienvenid@ al poblado Vegaces
+  Conversacion:
+  - Oracion: "Finalmente, Con Tiempo has llegado al \xFAltimo mapa."
+  - Oracion: "En este punto ya no tengo nada que ense\xF1arte."
+  - Oracion: "Los obst\xE1culos venideros ya son problemas que deber\xE1s solventar
+      por ti mism@."
+  - Oracion: "Suerte en lo que te propongas y recuerda que esta siempre ser\xE1 tu
+      casa."
+  Despedida: "\nUn saludo, \r\nV\xEDctor."
