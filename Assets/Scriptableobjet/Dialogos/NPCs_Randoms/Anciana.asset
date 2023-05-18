@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7852d91b5aa9b474394428aebc9ed708, type: 3}
-  m_Name: Victor_Dialogo_Bosque
+  m_Name: Anciana
   m_EditorClassIdentifier: 
-  Nombre: Victor
-  Icono: {fileID: 21300000, guid: 2b517ee58893ae04fb0ff52a9b4cc643, type: 3}
+  Nombre: 
+  Icono: {fileID: 0}
   ContieneInteraccionExtra: 0
   InteraccionExtra: 0
-  Saludo: Bienvenid@ al poblado Vegaces
-  Conversacion:
-  - Oracion: Este es el bosque de la red.
-  - Oracion: "Se ubica en segundo por qu\xE9 la red va un poco as\xED asa."
-  - Oracion: Ten cuidado porque puedes llevarte alguna sorpresa.
-  Despedida: Y con sorpresa me refiero a los enemigos.
+  Saludo: "Hola precios@ \xBFEn qu\xE9 puedo ayudarte hoy?"
+  Conversacion: []
+  Despedida: "Espero que tengas un buen d\xEDa."
