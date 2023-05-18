@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7852d91b5aa9b474394428aebc9ed708, type: 3}
+  m_Name: Victor_Dialogo
+  m_EditorClassIdentifier: 
+  Nombre: Victor
+  Icono: {fileID: 21300000, guid: 2b517ee58893ae04fb0ff52a9b4cc643, type: 3}
+  ContieneInteraccionExtra: 0
+  InteraccionExtra: 0
+  Saludo: Bienvenid@ al paramo del asterisco.
+  Conversacion:
+  - Oracion: Cuentan que por aqui se formanban piramides de asteriscos.
+  - Oracion: Unas veces con un bucle for, otras con dos y a veces incluso con while.
+  - Oracion: Pero a dia de hoy, es mi primo gepeton quien lo hace.
+  Despedida: Eso es todo por ahora joven.
