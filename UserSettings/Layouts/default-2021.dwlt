@@ -144,7 +144,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 65
+=======
+  controlID: 24
+>>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +173,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 66
+=======
+  controlID: 25
+>>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,10 +195,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 291.2
     height: 422.4
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 364
+    height: 561
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -269,10 +284,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1172.8
     y: 0
+<<<<<<< Updated upstream
     width: 363.19995
     height: 722.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 454
+    height: 947
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -558,9 +580,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: -43.571754, y: 6.99098, z: -17.59574}
     speed: 2
     m_Value: {x: -43.571754, y: 6.99098, z: -17.59574}
+=======
+    m_Target: {x: -1.2454606, y: 11.118329, z: -3.3515253}
+    speed: 2
+    m_Value: {x: -0.39901537, y: 10.66603, z: -3.3349197}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,9 +639,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 66.941154
     speed: 2
     m_Value: 66.941154
+=======
+    m_Target: 38.562428
+    speed: 2
+    m_Value: 36.901844
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -668,10 +702,17 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
+<<<<<<< Updated upstream
       scrollPos: {x: 0, y: 724}
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: b8f4ffff24f7ffff34f8ffffe8f8ffff10faffffe8faffffa06200002c650000086b00004a6d0000626e0000a26f0000
+=======
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 6c6d0000
+      m_LastClickedID: 28012
+      m_ExpandedIDs: 0efbfffffe620000c46a0000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -880,7 +921,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: vic
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -894,7 +935,7 @@ MonoBehaviour:
     m_Folders:
     - Assets/Scripts/Extras
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: vic
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
@@ -904,10 +945,17 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 199}
     m_SelectedIDs: b6740000
     m_LastClickedID: 29878
     m_ExpandedIDs: 000000007c7400007e74000080740000827400008474000086740000887400008a7400008c7400008e7400009074000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 287}
+    m_SelectedIDs: 9a740000
+    m_LastClickedID: 29850
+    m_ExpandedIDs: 000000005474000056740000587400005a7400005c7400005e740000607400006274000064740000667400006874000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -935,7 +983,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 000000007c7400007e74000080740000827400008474000086740000887400008a7400008c7400008e74000090740000
+=======
+    m_ExpandedIDs: 000000005474000056740000587400005a7400005c7400005e7400006074000062740000647400006674000068740000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
