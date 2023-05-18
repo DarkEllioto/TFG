@@ -78,7 +78,7 @@
     <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionVida.cs" />
     <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionMana.cs" />
     <Compile Include="Assets\Scripts\Dialogo\NPCDialogo.cs" />
-    <Compile Include="Assets\Waypoint\NPCmovimiento.cs" />
+    <Compile Include="Assets\Waypoint\NPCMovimiento.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
     <Compile Include="Assets\Scripts\Dialogo\NPCInteraccion.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioUI.cs" />
