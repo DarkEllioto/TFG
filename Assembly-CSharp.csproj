@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMana.cs" />
     <Compile Include="Assets\Scripts\Dialogo\DialogoManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\MonedasManager.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionDetectarPersonaje.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionSeguirPersonaje.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Decisiones\DecisionPersonajeRangoDeAtaque.cs" />
@@ -88,7 +89,9 @@
     <Compile Include="Assets\Scripts\Inventario\ItemPorAgregar.cs" />
     <Compile Include="Assets\Scripts\Extras\Singleton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMover.cs" />
+    <Compile Include="Assets\Scripts\Tienda\TiendaManager.cs" />
     <Compile Include="Assets\Scripts\Extras\TextoAnimacion.cs" />
+    <Compile Include="Assets\Scripts\Tienda\ItemVenta.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Transicion.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionActivarCaminoMovimiento.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeVida.cs" />
@@ -98,6 +101,7 @@
     <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
+    <Compile Include="Assets\Scripts\Tienda\ItemTienda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
