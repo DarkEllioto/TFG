@@ -378,6 +378,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Armas/Arma.cs"
+"Assets/Scripts/Armas/ContenedorArma.cs"
 "Assets/Scripts/Dialogo/DialogoManager.cs"
 "Assets/Scripts/Dialogo/NPCDialogo.cs"
 "Assets/Scripts/Dialogo/NPCInteraccion.cs"
@@ -422,7 +423,7 @@
 "Assets/Scripts/Tienda/ItemTienda.cs"
 "Assets/Scripts/Tienda/ItemVenta.cs"
 "Assets/Scripts/Tienda/TiendaManager.cs"
-"Assets/Waypoint/NPCmovimiento.cs"
+"Assets/Waypoint/NPCMovimiento.cs"
 "Assets/Waypoint/Waypoint.cs"
 "Assets/Waypoint/WaypointMovimiento.cs"
 -langversion:9.0

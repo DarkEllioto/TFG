@@ -51,9 +51,9 @@ public class InventarioUI : Singleton<InventarioUI>
         for (int i = 0; i < Inventario.Instance.NumeroDeSlots; i++)
         {
             InventarioSlot nuevoSlot = Instantiate(slotPrefab, contenedor);
-            //Añadimos al index de inventario slot la propiedas de cada uno
+            //Aï¿½adimos al index de inventario slot la propiedas de cada uno
             nuevoSlot.Index = i;
-            //Añadimos el nuevo slot disponible
+            //Aï¿½adimos el nuevo slot disponible
             slotsDisponibles.Add(nuevoSlot);
         }
     }
@@ -74,16 +74,16 @@ public class InventarioUI : Singleton<InventarioUI>
         }
     }
     //Creamos el metodo que nos permita poner imagenes en el inventario
-    public void DibujarItemEnInventario(InventarioItem itemPorAñadir,int cantidad, int itemIndex)
+    public void DibujarItemEnInventario(InventarioItem itemPorAÃ±adir,int cantidad, int itemIndex)
     {
         //obtenemos referencia del slot
         InventarioSlot slot = slotsDisponibles[itemIndex];
         //Comprobamos que el item no sea null
-        if(itemPorAñadir != null)
+        if(itemPorAÃ±adir != null)
         {
             //Activamos el slot
             slot.ActivarSlotUI(estado: true);
-            slot.ActualizarSlot(itemPorAñadir, cantidad);
+            slot.ActualizarSlot(itemPorAÃ±adir, cantidad);
         }
         else
         {
@@ -121,6 +121,29 @@ public class InventarioUI : Singleton<InventarioUI>
         }
     }
 
+     //METODO EQUIPAR ITEM
+       public void EquiparItem()
+    {
+        //SE COMPRUEBA QUE TENGA UN SLOCK SELECCIONADO
+        if (SlotSeleccionado != null)
+        {
+            //SE SELECCIONA EL SLOCK
+            SlotSeleccionado.SlotEquiparItem();
+            SlotSeleccionado.SeleccionarSlot();
+        }
+    }
+      //METODO EQUIPAR ITEM
+       public void RemoverItem()
+    {
+        //SE COMPRUEBA QUE TENGA UN SLOCK SELECCIONADO
+        if (SlotSeleccionado != null)
+        {
+            //SE SELECCIONA EL SLOCK
+            SlotSeleccionado.SlotRemoverItem();
+            SlotSeleccionado.SeleccionarSlot();
+        }
+    }
+
     
     #region Evento
     //Creamos la igualdad para el evento
@@ -135,7 +158,7 @@ public class InventarioUI : Singleton<InventarioUI>
         }
     }
 
-    //Añadimos los metodos para habilitad y deshabilitar el evento
+    //Aï¿½adimos los metodos para habilitad y deshabilitar el evento
 
     private void OnEnable()
     {

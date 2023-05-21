@@ -23,37 +23,37 @@ public class Inventario : Singleton<Inventario>
     {
         itemsInventario = new InventarioItem[numeroDeSlots];
     }
-    //Creamos el metodo que nos permita añadir un item
-    public void AñadirItem(InventarioItem itemPorAñadir,int cantidad)
+    //Creamos el metodo que nos permita aÃ±adir un item
+    public void AÃ±adirItem(InventarioItem itemPorAÃ±adir,int cantidad)
     {
-        if(itemPorAñadir == null)
+        if(itemPorAÃ±adir == null)
         {
             return;
         }
         //Hacemos la verificacion en caso de tener un item en el inventario ya llamando a la funcion
-        List<int> indexes = VerificarExistencias(itemPorAñadir.ID);
-        if (itemPorAñadir.esAcumulable)
+        List<int> indexes = VerificarExistencias(itemPorAÃ±adir.ID);
+        if (itemPorAÃ±adir.esAcumulable)
         {
             if(indexes.Count > 0)
             {
                 for (int i = 0; i < indexes.Count; i++)
                 {
                     //Comprobamos que no hayamos superado la cantidad maxima por slot
-                    if (itemsInventario[indexes[i]].cantidad < itemPorAñadir.AcumulacionMax)
+                    if (itemsInventario[indexes[i]].cantidad < itemPorAÃ±adir.AcumulacionMax)
                     {
-                        //añadimos la cantidad al slot
+                        //aÃ±adimos la cantidad al slot
                         itemsInventario[indexes[i]].cantidad += cantidad;
                         //creamos una nueva cantidad en caso de superar el maximo del slot
-                        if (itemsInventario[indexes[i]].cantidad > itemPorAñadir.AcumulacionMax)
+                        if (itemsInventario[indexes[i]].cantidad > itemPorAÃ±adir.AcumulacionMax)
                         {
-                            //Creamos la diferencia para añadirlo al nuevo slot
-                            int diferencia = itemsInventario[indexes[i]].cantidad - itemPorAñadir.AcumulacionMax;
-                            itemsInventario[indexes[i]].cantidad = itemPorAñadir.AcumulacionMax;
-                            //Volvemos a llamar al metodo usando la recursividad para añadir las cantidades
-                            AñadirItem(itemPorAñadir, diferencia);
+                            //Creamos la diferencia para aï¿½adirlo al nuevo slot
+                            int diferencia = itemsInventario[indexes[i]].cantidad - itemPorAÃ±adir.AcumulacionMax;
+                            itemsInventario[indexes[i]].cantidad = itemPorAÃ±adir.AcumulacionMax;
+                            //Volvemos a llamar al metodo usando la recursividad para aï¿½adir las cantidades
+                            AÃ±adirItem(itemPorAÃ±adir, diferencia);
                         }
 
-                        InventarioUI.Instance.DibujarItemEnInventario(itemPorAñadir,
+                        InventarioUI.Instance.DibujarItemEnInventario(itemPorAÃ±adir,
                             itemsInventario[indexes[i]].cantidad, indexes[i]);
                         return;
                     }
@@ -61,21 +61,21 @@ public class Inventario : Singleton<Inventario>
             }
         }
 
-        //Añadimos de manera nueva el slot
+        //AÃ±adimos de manera nueva el slot
         if(cantidad <= 0)
         {
             return;
         }
 
-        if(cantidad > itemPorAñadir.AcumulacionMax)
+        if(cantidad > itemPorAÃ±adir.AcumulacionMax)
         {
-            AñadirItemEnSlotDisponible(itemPorAñadir, itemPorAñadir.AcumulacionMax);
-            cantidad -= itemPorAñadir.AcumulacionMax;
-            AñadirItem(itemPorAñadir, cantidad);
+            AÃ±adirItemEnSlotDisponible(itemPorAÃ±adir, itemPorAÃ±adir.AcumulacionMax);
+            cantidad -= itemPorAÃ±adir.AcumulacionMax;
+            AÃ±adirItem(itemPorAÃ±adir, cantidad);
         }
         else
         {
-            AñadirItemEnSlotDisponible(itemPorAñadir, cantidad);
+            AÃ±adirItemEnSlotDisponible(itemPorAÃ±adir, cantidad);
         }
 
     }
@@ -92,7 +92,7 @@ public class Inventario : Singleton<Inventario>
                 //Comparamos con cada id para cercionarnos de que esta en el inventario
                 if (itemsInventario[i].ID == itemId)
                 {
-                    //Si el item coincide con algun id de nuestro index entonces le añadimos la cantidad
+                    //Si el item coincide con algun id de nuestro index entonces le aÃ±adimos la cantidad
                     indexesDelItem.Add(i);
                 }
             }
@@ -102,7 +102,7 @@ public class Inventario : Singleton<Inventario>
         return indexesDelItem;
     }
     
-    private void AñadirItemEnSlotDisponible(InventarioItem item, int cantidad)
+    private void AÃ±adirItemEnSlotDisponible(InventarioItem item, int cantidad)
     {
         //Buscamos el slot vacio
         for (int i = 0; i < itemsInventario.Length; i++)
@@ -145,6 +145,49 @@ public class Inventario : Singleton<Inventario>
             EliminarItem(index);
         }
     }
+
+     //METODO EQUIPAR ITEM SE PASA PARAMETRO ENTERO
+     private void EquiparItem(int index)
+    {
+        //SE VERIFICA SI EXISTE EL ITEM
+        if (itemsInventario[index] == null)
+        {
+            //SI NO EXISTE SE REGRES
+            return;
+        }
+        //SE VERIFICA SI ES UNA ARMA
+        if (itemsInventario[index].Tipo != tiposDeItems.Armas)
+        
+        {
+            //SI NO ES ARMA SE REGRESA
+            return;
+        }
+        //DE LO CONTRARIO SE EQUIPA
+        itemsInventario[index].EquiparItem();
+    }
+
+    //METODO PARA REMOVER ITEM  SE PASA LA REFERENCIA INDEX
+     private void RemoverItem(int index) 
+    {
+        //SE VERIFICA SI ESTA VACIO
+        if (itemsInventario[index] == null)
+        {
+            //SE REGRESA
+            return;
+        }
+        //SI EL ITEM NO ES DE ARMA 
+        if (itemsInventario[index].Tipo != tiposDeItems.Armas)
+        {
+            //SE REGRESA
+            return;
+        }
+        //DE LO CONTRARIO SI NINGUNA DE LAS CONDICIONES ANTERIORES SE CUMPLE SE LLAMA AL METODO REMOVER ITEM
+        itemsInventario[index].RemoverItem();
+    }
+
+
+
+
     //Creamos el metodo para mover item
     public void MoverItem(int indexInicial, int indexFinal)
     {
@@ -176,8 +219,10 @@ public class Inventario : Singleton<Inventario>
                 UsarItem(index);
                 break;
             case TipoDeInteraccion.Equipar:
+                EquiparItem(index);
                 break;
             case TipoDeInteraccion.Remover:
+                RemoverItem(index);
                 break;
         }
     }

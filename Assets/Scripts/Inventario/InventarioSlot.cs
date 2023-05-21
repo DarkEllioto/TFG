@@ -72,4 +72,26 @@ public class InventarioSlot : MonoBehaviour
             EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Usar, Index);
         }
     }
+    //SE CREA EL METODO SLOCK EQUIPAR ITEM
+    public void SlotEquiparItem()
+    {
+        //SE COMPRUEBA SI EL SLOT TIENE ITEM SE LANZA EL EVENTO
+        if (Inventario.Instance.ItemsInventario[Index] != null)
+        {
+            //SE INVOCA Y SE LE PASA EL TIPO DE ITERACION Y EL INDEX
+            EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Equipar, Index);
+        }
+    }
+//METODO PARA REMOVER EL ITEM DEL CONTENEDOR
+     public void SlotRemoverItem()
+    {
+        
+        //SE COMPRUEBA SI EL SLOT TIENE ITEM SE LANZA EL EVENTO
+        if (Inventario.Instance.ItemsInventario[Index] != null)
+        {
+            
+            //SE INVOCA Y SE LE PASA EL TIPO DE ITERACION QUE SERA REMOVER Y EL INDEX
+            EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Remover, Index);
+        }
+    }
 }
