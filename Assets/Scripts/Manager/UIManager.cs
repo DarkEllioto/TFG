@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelStat;
     [SerializeField] private GameObject panelTienda;
     [SerializeField] private GameObject panelInventario;
+    [SerializeField] private GameObject panelMisiones;
 
     //Creamos unas referencias para obtener la imagen de la vida,el mana, exp y el texto
 
@@ -164,14 +165,18 @@ public class UIManager : Singleton<UIManager>
     {
         panelInventario.SetActive(!panelInventario.activeSelf);
     }
+    public void abrirCerrarPanelQuest()
+    {
+        panelMisiones.SetActive(!panelMisiones.activeSelf);
+    }
 
     public void AbrirPanelInteraccion(InteraccionExtraNPC tipoInteraccion)
     {
         switch (tipoInteraccion)
         {
-            /*case InteraccionExtraNPC.Quests:
-                AbrirCerrarPanelInspectorQuests();
-                break;*/
+                case InteraccionExtraNPC.Quests:
+                abrirCerrarPanelQuest();
+                break;
             case InteraccionExtraNPC.Tienda:
                 AbrirCerrarPanelTienda();
                 break;
@@ -179,5 +184,12 @@ public class UIManager : Singleton<UIManager>
                 break;*/
         }
     }
+
+    //Creamos el metodo para abrir y cerrar el panel de quest
+    
+
+    //Creamos el metodo para abrir el panel correspondiente
+
+    
     #endregion
 }
