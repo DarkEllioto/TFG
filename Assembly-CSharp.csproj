@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Estado.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
+    <Compile Include="Assets\Scripts\QuestPrinci\Quest.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMana.cs" />
     <Compile Include="Assets\Scripts\Dialogo\DialogoManager.cs" />
     <Compile Include="Assets\Scripts\Manager\MonedasManager.cs" />
@@ -105,6 +106,9 @@
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
     <Compile Include="Assets\Scripts\Tienda\ItemTienda.cs" />
+    <Compile Include="Assets\Scripts\QuestPrinci\QuestDescripcion.cs" />
+    <Compile Include="Assets\Scripts\QuestPrinci\InspectorQuestDescripcion.cs" />
+    <Compile Include="Assets\Scripts\QuestPrinci\QuestManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
