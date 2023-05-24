@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//A�adimos la propiedad para los assets del menu, fuera de nuestra clase principal
+//A�adimos la propiedad para los assets del menu, fuera de nuestra clase principal
 [CreateAssetMenu(menuName ="Stats")]
 //Convertimos nuestra clase en una clase Scriptableobjet
 public class PersonajeStats : ScriptableObject
@@ -9,7 +9,7 @@ public class PersonajeStats : ScriptableObject
     //Creamos los parametros que habran en nuestro menu
     [Header("Stats")]
     public float Nivel;
-    public float Da�o = 5f;
+    public float Daño = 5f;
     public float Defensa = 2f;
     public float Agilidad = 5f;
     public float ExpActual;
@@ -32,49 +32,63 @@ public class PersonajeStats : ScriptableObject
     [HideInInspector]
     public int PuntosDisponibles;
 
-    //Creamos los bonus por a�adir atributos
-    public void A�adirBonusPorAtributoDestreza()
+    //Creamos los bonus por a�adir atributos
+    public void AñadirBonusPorAtributoDestreza()
     {
-        Da�o += 2f;
+        Daño += 2f;
         Defensa += 1f;
         Bloquear += 0.03f;
     }
+    //SE CREA UN METODO DE TIPO VOY PARA EL BONUS POR ARMA, SE LE PASA UNA REFERENCIA DE TIPO ARMA
+    public void AñadirBonusPorArma(Arma arma){
+        //SE ACTUALIZA EL DAÑO,y los porcentajes A LOS VALORES QUE OCACIONA EL ARMA.
+        Daño +=arma.Daño;
+        DCritico += arma.ChanceCritico;
+        Bloquear += arma.ChanceBloqueo;
+    }
+      //SE CREA UN METODO DE TIPO VOY PARA EL BONUS POR ARMA, SE LE PASA UNA REFERENCIA DE TIPO ARMA
+    public void RemoverBonusPorArma(Arma arma){
+        //SE Remueven los valores.
+        Daño -=arma.Daño;
+        DCritico -= arma.ChanceCritico;
+        Bloquear -= arma.ChanceBloqueo;
+    }
 
-    public void A�adirBonusPorAtributoInteligencia()
+    public void AñadirBonusPorAtributoInteligencia()
     {
-        Da�o += 3.5f;
+        Daño += 3.5f;
         Defensa += 0.6f;
         DCritico += 0.15f;
     }
 
-    public void A�adirBonusPorAtributoDefensa()
+    public void AñadirBonusPorAtributoDefensa()
     {
-        Da�o += 1.2f;
+        Daño += 1.2f;
         Defensa += 3.5f;
         Bloquear += 0.18f;
 
     }
 
-    public void A�adirBonusPorAtributoAgilidad()
+    public void AñadirBonusPorAtributoAgilidad()
     {
-        Da�o += 2f;
+        Daño += 2f;
         DCritico = 0.25f;
         Pcritico = 0.15f;
         Agilidad = 0.1f;
 
     }
 
-    public void A�adirBonusPorAtributoDCritico()
+    public void AñadirBonusPorAtributoDCritico()
     {
-        Da�o += 2.5f;
+        Daño += 2.5f;
         DCritico += 0.3f;
         Pcritico += 0.05f;
 
     }
 
-    public void A�adirBonusPorAtributoPcritico()
+    public void AñadirBonusPorAtributoPcritico()
     {
-        Da�o += 2.5f;
+        Daño += 2.5f;
         DCritico += 0.15f;
         Pcritico += 0.1f;
 
@@ -83,7 +97,7 @@ public class PersonajeStats : ScriptableObject
     public void ResetarValores()
     {
         //Stats
-        Da�o = 5f;
+        Daño = 5f;
         Defensa = 2f;
         Agilidad = 5f;
         Nivel = 1;

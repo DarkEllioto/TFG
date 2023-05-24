@@ -46,4 +46,10 @@ public class ObjectPooler : MonoBehaviour
 
         return null; //SI NO SE DEVUELVE NULL
     }
+    //SE CREA EL METODO DESTRUIR POOLER PARA PODER ELIMINAR EL POOLER
+    public void DestruirPooler(){
+        Destroy(ListaContenedor);
+        lista.Clear();
+    }
+
 }

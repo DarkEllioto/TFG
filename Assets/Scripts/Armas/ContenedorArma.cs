@@ -31,8 +31,8 @@ public class ContenedorArma :  Singleton<ContenedorArma>
             //SE ACTIVA EL SKILL
             armaSkillIcono.gameObject.SetActive(true); 
       //  }
-        
-      // Inventario.Instance.Personaje.PersonajeAtaque.EquiparArma(itemArma);
+        //SE LLAMA A EL METODO EQUIPAR ARMA INVOCANDO LAS CLASES RELACIONADAS
+       Inventario.Instance.Personaje.PersonajeAtaque.EquiparArma(itemArma);
     }
 
     // METODO PARA REMOVER EL ARMA
@@ -43,8 +43,9 @@ public class ContenedorArma :  Singleton<ContenedorArma>
         armaSkillIcono.gameObject.SetActive(false);
         //SE PONE EN NULL EL ARMA 
         ArmaEquipada = null;
-        //SE AGREGA AL INVENTARIO
-       // Inventario.Instance.Personaje.PersonajeAtaque.RemoverArma();
+        
+      //SE LLAMA EL METODO REMOVER ARMA
+       Inventario.Instance.Personaje.PersonajeAtaque.RemoverArma();
     }
 
 

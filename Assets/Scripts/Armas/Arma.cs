@@ -20,7 +20,7 @@ public class Arma : ScriptableObject
 
     //VARIABLES DE ARMA MAGICA
     [Header("Arma Magica")] 
-  //  public Proyectil ProyectilPrefab;
+    public Proyectil ProyectilPrefab;
     public float ManaRequerida;
 
     //VARIABLES PARA PONCERTAJE DE CRITICO Y BLOQUEO

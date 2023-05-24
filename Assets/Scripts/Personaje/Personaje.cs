@@ -16,9 +16,12 @@ public class Personaje : MonoBehaviour
     public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
     //Creamos una referencia para acceder a la clase personaje mana
     public PersonajeMana PersonajeMana { get; set; }
+    //SE CREA LA REFERENCIA DE PERSONAJE ATAQUE
+    public PersonajeAtaque PersonajeAtaque{get; private set; }
     //Creamos el metodo awake para tener la referencia de la clase personaje vida
     private void Awake()
     {
+        PersonajeAtaque= GetComponent<PersonajeAtaque>();
         PersonajeVida = GetComponent<PersonajeVida>();
         PersonajeAnimaciones = GetComponent<PersonajeAnimaciones>();
         PersonajeMana = GetComponent<PersonajeMana>();

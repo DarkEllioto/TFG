@@ -6,19 +6,18 @@ using UnityEngine;
 public class PersonajeFX : MonoBehaviour
 {
 
+     //SE OBTIENE LA REFERENCIA
+     [Header("Pooler")] 
+    [SerializeField] private ObjectPooler pooler;
+
+       [Header("config")] 
     //SE OBTIENE LA REFERENCIA DEL CANVAS 
     [SerializeField] private GameObject canvasTextoAnimacionPrefab;
     //EXPECIFICACION DEL DONDE SE PONE EL TEXTO
     [SerializeField] private Transform canvasTextoPosicion;
 
 
-    //REFERENCIA DE LA CLASE Object Pooler
-    private ObjectPooler pooler;
-
-    private void Awake()
-    {
-        pooler = GetComponent<ObjectPooler>(); 
-    }
+    
 
     private void Start()
     {
