@@ -82,6 +82,33 @@ public class PersonajeAtaque : MonoBehaviour
         //SE PONE EL ENEMIGO OBJETIVO A NULL
         EnemigoObjetivo = null;
     }
+    //METODO ENEMIGO MELEE DETECTADO CON PARAMETRO DE TIPO ENEMIGO INTERACCION
+    private void EnemigoMeleeDetectado(EnemigoInteraccion enemigoDetectado)
+    {
+        //SI EL ARMA ESTA NULL SE REGRESA
+        if (ArmaEquipada == null) { return; }
+        //SI EL ARMA ES DISTINTA A TIPO MELEE SE REGRESA
+        if (ArmaEquipada.Tipo != TipoArma.Melee) { return; }
+        //DE LO CONTRARIO SE DETECTA EL ENEMIGO ESTABLECIENDO LA REFERENCIA
+        EnemigoObjetivo = enemigoDetectado;
+        //SE LLAMA AL METODO Y SE LE PASA LOS PARAMETROS
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(true, TipoDeteccion.Melee);
+    }
+
+    //METODO ENEMIGO MELEE PERDIDO 
+    private void EnemigoMeleePerdido()
+    {
+        //SI NO HAY UN ENEMIGO SELECCIONADO SE REGRESA
+        if (ArmaEquipada == null) { return; }
+        //SI EL ENEMIGO OBJETIVO ES NULL SE REGRESA 
+        if (EnemigoObjetivo == null) { return; }
+        //SI EL ARMA ES DISTINTA A MELLE SE REGRESA
+        if (ArmaEquipada.Tipo != TipoArma.Melee) { return; }
+        //SI NO SE PASA EL PARAMETRO FALSE Y SE DESACTIVA
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(false, TipoDeteccion.Melee);
+        EnemigoObjetivo = null;
+    }
+
 
 
     //METODO 
@@ -90,8 +117,8 @@ public class PersonajeAtaque : MonoBehaviour
         //SE SUSCRIBE  EL EVENTO SELECIONADO AL ENEMIGO RANGO
         SeleccionManager.EventoEnemigoSeleccionado += EnemigoRangoSeleccionado;
         SeleccionManager.EventoObjetoNoSeleccionado += EnemigoNoSeleccionado;
-        /*PersonajeDetector.EventoEnemigoDetectado += EnemigoMeleeDetectado;
-        PersonajeDetector.EventoEnemigoPerdido += EnemigoMeleePerdido;*/
+        PersonajeDetector.EventoEnemigoDetectado += EnemigoMeleeDetectado;
+        PersonajeDetector.EventoEnemigoPerdido += EnemigoMeleePerdido;
     }
 
     private void OnDisable()
@@ -99,8 +126,8 @@ public class PersonajeAtaque : MonoBehaviour
 
         SeleccionManager.EventoEnemigoSeleccionado -= EnemigoRangoSeleccionado;
         SeleccionManager.EventoObjetoNoSeleccionado -= EnemigoNoSeleccionado;
-        /*PersonajeDetector.EventoEnemigoDetectado -= EnemigoMeleeDetectado;
-        PersonajeDetector.EventoEnemigoPerdido -= EnemigoMeleePerdido;*/
+        PersonajeDetector.EventoEnemigoDetectado -= EnemigoMeleeDetectado;
+        PersonajeDetector.EventoEnemigoPerdido -= EnemigoMeleePerdido;
     }
    
 }

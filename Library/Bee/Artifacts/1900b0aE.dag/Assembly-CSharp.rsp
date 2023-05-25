@@ -417,6 +417,7 @@
 "Assets/Scripts/Personaje/Personaje.cs"
 "Assets/Scripts/Personaje/PersonajeAnimaciones.cs"
 "Assets/Scripts/Personaje/PersonajeAtaque.cs"
+"Assets/Scripts/Personaje/PersonajeDetector.cs"
 "Assets/Scripts/Personaje/PersonajeExperiencia.cs"
 "Assets/Scripts/Personaje/PersonajeFX.cs"
 "Assets/Scripts/Personaje/PersonajeMana.cs"

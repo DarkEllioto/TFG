@@ -10,26 +10,29 @@ public enum TipoDeteccion
 
 public class EnemigoInteraccion : MonoBehaviour
 {
+    //VARIABLES TIPO GAME OBJECT
     [SerializeField] private GameObject seleccionRangoFX;
     [SerializeField] private GameObject seleccionMeleeFX;
 
     //METODO PARA PODER MOSTRAR EL ENEMIGO SELECCIONADO  
     public void MostrarEnemigoSeleccionado(bool estado, TipoDeteccion tipo)
     {
-      /*  if (tipo == TipoDeteccion.Rango)
+        //SI EL ESTADO ES VERDADERO LO MUESTRA SI ES FALSE LO OCULTA 
+        //SI EL TIPO ES DE TIPO RANGO 
+       if (tipo == TipoDeteccion.Rango)
         {
-            //SI EL ESTADO ES VERDADERO LO MUESTRA SI ES FALSE LO OCULTA */
+            //SELECIONA ES DE RANGO FX
             seleccionRangoFX.SetActive(estado);
-       /* }
+        }
         else
-        {
+        {   //O DE SELECCION MELEE FX
             seleccionMeleeFX.SetActive(estado);
         }
     }
-
+/*
     public void DesactivarSpritesSeleccion()
     {
         seleccionMeleeFX.SetActive(false);
-        seleccionRangoFX.SetActive(false);*/
-    }
+        seleccionRangoFX.SetActive(false);
+    }*/
 }
