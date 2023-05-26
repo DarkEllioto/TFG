@@ -12,11 +12,91 @@ public class PersonajeAtaque : MonoBehaviour
      [Header("Pooler")] 
     [SerializeField] private ObjectPooler pooler;
 
+    //REFERENCIAS DE LAS POCISIONES DE ATAQUE
+    [Header("Ataque")] 
+    [SerializeField] private float tiempoEntreAtaques;
+     [SerializeField] private Transform[] posicionesDisparo;
+
     //SE CREA UNA PROPIEDAD DE TIPO ARMA
     public Arma ArmaEquipada { get; private set; }
     //PROPIEDAD DE TIPO ENEMIGO INTERACCION
     public EnemigoInteraccion EnemigoObjetivo { get; private set; }
    
+    //VARIABLE PARA OBTENER LAS DIRECCIONES DEL PERSONAJE
+     private int indexDireccionDisparo;
+     //VARIABLE  DE PERSONAJE MANA
+      private PersonajeMana _personajeMana;
+       private float tiempoParaSiguienteAtaque;
+
+
+
+      private void Awake()
+    {
+        //SE OBTIENE EL COMPONENTE DE PERSONAJE MANA
+        _personajeMana = GetComponent<PersonajeMana>();
+    }
+
+        private void Update()
+    {
+        ObtenerDireccionDisparo();
+        //SI EL TIEMPO ACTUAL ES MAYOR QUE EL TIEMPO PARA SIGUIENTE ATAQUE
+          if (Time.time > tiempoParaSiguienteAtaque)
+        {
+            //AL PULSAR LA TECLA ESPACIO 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //SE COMPRUEBA SI EL ENEMIGO OBJETIVO O UN ARMA EQUIPADA SON NULOS
+                if (ArmaEquipada == null || EnemigoObjetivo == null)
+                {
+                    //SI NO SE REGRESA
+                    return;
+                }
+                //DE LO CONTRARIO SE LLAMA AL METODO USAR ARMA
+                UsarArma();
+                //SE COMPRUEBA EL TIEMPO PARA EL SIGUIENTE ATAQUE Y SE ACTUALIZA
+                tiempoParaSiguienteAtaque = Time.time + tiempoEntreAtaques;
+                //
+               // StartCoroutine(IEEstablecerCondicionAtaque());
+            }
+        }
+    }
+
+
+
+    //METODO USAR ARMA
+    private void UsarArma()
+    {
+        //SE VERIFICA QUE EL ARMA ES DE TIPO MAGIA
+        if (ArmaEquipada.Tipo == TipoArma.Magia)
+        {
+            //SEGUIDAMENTE SE VERIFICA SI HAY MANA SUFICIENTE
+            if (_personajeMana.ManaActual < ArmaEquipada.ManaRequerida)
+            {
+                //SI NO HAY SUFICIENTE SE REGRESA
+                return;
+            }
+            //PARA UTILIZAR EL ARMA SE OBTIENE UNA INSTANCIA DE UN PROYECTIL
+            GameObject nuevoProyectil = pooler.ObtenerInstancia();
+            //SE OBTIENE LA POCISION DESDE DONDE SALE
+            nuevoProyectil.transform.localPosition = posicionesDisparo[indexDireccionDisparo].position;
+            //SE OBTIENE EL COMPONENTE EL COMPONENTE DE PROYECTIL 
+            Proyectil proyectil = nuevoProyectil.GetComponent<Proyectil>();
+            //SE INICIALIZA ESTE PROYECTIL
+            proyectil.InicializarProyectil(EnemigoObjetivo);
+            //se activa el nuevo proyectil
+            nuevoProyectil.SetActive(true);
+            //SE DESCUENTA EL MANA QUE SE ESTA UTILIZANDO 
+            _personajeMana.UsarMana(ArmaEquipada.ManaRequerida);
+        }
+       /* else //DE LO CONTRARIO 
+        {
+            float daño = ObtenerDaño();
+            EnemigoVida enemigoVida = EnemigoObjetivo.GetComponent<EnemigoVida>();
+            enemigoVida.RecibirDaño(daño);
+            EventoEnemigoDañado?.Invoke(daño);
+        }*/
+    }
+
 
      
 
@@ -54,6 +134,44 @@ public class PersonajeAtaque : MonoBehaviour
         //SI ES DISTINTO A NUL SE PONE EN NULO 
         ArmaEquipada = null;
     }
+
+    //METODO PARA OBTENER LA DIRECCION DEL DISPARO 
+     private void ObtenerDireccionDisparo()
+    {
+        //SE OBTIENE EL MOVIMIENTO DEL PERSONAL SI ES HORIZONTAL O VERTICAL 
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //SE EL MOVIMIENTO ES HACIA LA DERECHA 
+        if (input.x > 0.1f)
+        {
+            //EL INDEX O EL DISPARO ES HACIA LA DERECHA
+            indexDireccionDisparo = 1;
+        }
+        //SI ES HACIA LA IZQUIERDA 
+        else if (input.x < 0f)
+        {
+            //EL INDEX DEL DISPARO ES 3
+            indexDireccionDisparo = 3;
+        }
+        //SI EL MOVIMIENTO ES HACIA ARRIBA
+        else if (input.y > 0.1f)
+        {
+            //EL INDEX DE DISPARO ES 0
+            indexDireccionDisparo = 0;
+        }
+        //SI EL MOVIMIENTO ES HACIA ABAJO 
+        else if (input.y < 0f)
+        {
+            //EL DISPARO ES 2
+            indexDireccionDisparo = 2;
+        }
+    }
+
+
+
+
+
+
+
 
     //SE CREA EL METODO SELECCION RANGO ENEMIGO SE LE PASA UN PARAMETRO DE TIPO ENEMIGO INTERACCION
     private void EnemigoRangoSeleccionado(EnemigoInteraccion enemigoSeleccionado)
