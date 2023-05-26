@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nombre: Cazador Principiante
   ID: Matar10
-  Cantidad: 10
+  cantidadObjetivo: 10
   Descripcion: Elimina 10 enemigos.
   RecompensaExp: 25
   RecompensaORO: 15

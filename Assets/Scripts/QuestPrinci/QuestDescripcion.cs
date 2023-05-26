@@ -7,13 +7,16 @@ public class QuestDescripcion : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI questNombre;
     [SerializeField] TextMeshProUGUI questDescripcion;
+
+    //Creamos un acceso
+    public Quest QuestCargado { get; set; }
     
     //Creamos el metodo para modificar estos campos
 
-    public virtual void ConfigurarQuestUI(Quest questPorCargar)
+    public virtual void ConfigurarQuestUI(Quest quest)
     {
         //Cargamos el nombre y la descripcion de las quest
-        questNombre.text = questPorCargar.Nombre;
-        questDescripcion.text = questPorCargar.Descripcion;
+        questNombre.text = quest.Nombre;
+        questDescripcion.text = quest.Descripcion;
     }
 }

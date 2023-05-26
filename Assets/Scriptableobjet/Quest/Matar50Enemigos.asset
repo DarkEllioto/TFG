@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nombre: Cazador Experto
   ID: Matar50
-  Cantidad: 50
+  cantidadObjetivo: 50
   Descripcion: Elimina 50 enemigos.
   RecompensaExp: 125
   RecompensaORO: 75

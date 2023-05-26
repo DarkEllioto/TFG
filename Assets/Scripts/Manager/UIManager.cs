@@ -18,6 +18,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelTienda;
     [SerializeField] private GameObject panelInventario;
     [SerializeField] private GameObject panelMisiones;
+    [SerializeField] private GameObject panelMisionesPersonaje;
 
     //Creamos unas referencias para obtener la imagen de la vida,el mana, exp y el texto
 
@@ -135,7 +136,11 @@ public class UIManager : Singleton<UIManager>
         manaActual = pManaaAc;
         manaMax = pManaMax;
     }
-
+    //Creamos el metodo para abrir y cerrar el panel de misiones del personaje
+    public void abrirCerrarPersonajeMisiones()
+    {
+        panelMisionesPersonaje.SetActive(!panelMisionesPersonaje.activeSelf);
+    }
     //Creamos un metodo para actualizar la exp actual del personaje
     public void ActualizarExpPersonaje(float pExpAc, float pExpReq)
     {

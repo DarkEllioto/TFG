@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nombre: Cazador Avanzado
   ID: Matar25
-  Cantidad: 25
+  cantidadObjetivo: 25
   Descripcion: Elimina 25 enemigos.
   RecompensaExp: 60
   RecompensaORO: 35

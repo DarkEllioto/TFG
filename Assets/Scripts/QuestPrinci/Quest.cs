@@ -10,7 +10,7 @@ public class Quest : ScriptableObject
     [Header("Info")]
     public string Nombre;
     public string ID;
-    public int Cantidad;
+    public int cantidadObjetivo;
 
     //Creamos la descripcion de nuestras misiones
 
