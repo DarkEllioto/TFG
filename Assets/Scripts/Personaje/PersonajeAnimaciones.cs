@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,16 @@ public class PersonajeAnimaciones : MonoBehaviour
     private Animator _animator;
     //Creamos la referencia hacia personajemover para obtener el movimiento
     private PersonajeMover _personajeMover;
+    //
+    private PersonajeAtaque _personajeAtaque;
     //Creamos un hash para las direcciones de movimiento
     private readonly int direccionX = Animator.StringToHash(name:"X");
     private readonly int direccionY = Animator.StringToHash(name: "Y");
     //Creamos dos campos privados para las capas de animacion
     [SerializeField] private string LayerIdle;
     [SerializeField] private string LayerCaminar;
+    //SE CREA EL LAYER DE ANIMACION DE ATACAR 
+    [SerializeField] private string LayerAtacar;
     //Creamos el hash para la animacion de muerte
     private readonly int Muerte = Animator.StringToHash(name: "Muerte");
 
@@ -25,6 +30,7 @@ public class PersonajeAnimaciones : MonoBehaviour
         _animator = GetComponent<Animator>();
         //Llamamos a personaje mover
         _personajeMover = GetComponent<PersonajeMover>();
+        _personajeAtaque= GetComponent<PersonajeAtaque>();
     }
     void Start()
     {
@@ -49,13 +55,21 @@ public class PersonajeAnimaciones : MonoBehaviour
     //Creamos un metodo que nos permita activar y desactivar layers en funcion de nuestro movimiento
     private void ActualizarLayers()
     {
-  
-        if (_personajeMover.EnMov)
+        //SE VERIFICA SI SE ESTA ATACANDO 
+        if(_personajeAtaque.Atacando){
+            //SE LLAMA ACTIVAR LAYER DE ATACAR
+              ActivarLayer(LayerAtacar);  
+        }
+        //SI NO SE ESTA ATACANDO
+        //SE VERIFICA SI ESTA EN MOVIMIENTO 
+       else if (_personajeMover.EnMov)
         {
+            //SE ACTIVA EL LAYER DE CAMINAR
             ActivarLayer(LayerCaminar);
         }
         else
         {
+            //DE LO CONTRARIO DE ACTIVA EL LAYER DE IDLE
             ActivarLayer(LayerIdle);
         }
     }

@@ -21,6 +21,8 @@ public class PersonajeAtaque : MonoBehaviour
     public Arma ArmaEquipada { get; private set; }
     //PROPIEDAD DE TIPO ENEMIGO INTERACCION
     public EnemigoInteraccion EnemigoObjetivo { get; private set; }
+    //PROPIEDAD DE ATACAR ES DE TIPO BOOLEAN
+     public bool Atacando { get; set; }
    
     //VARIABLE PARA OBTENER LAS DIRECCIONES DEL PERSONAJE
      private int indexDireccionDisparo;
@@ -55,8 +57,8 @@ public class PersonajeAtaque : MonoBehaviour
                 UsarArma();
                 //SE COMPRUEBA EL TIEMPO PARA EL SIGUIENTE ATAQUE Y SE ACTUALIZA
                 tiempoParaSiguienteAtaque = Time.time + tiempoEntreAtaques;
-                //
-               // StartCoroutine(IEEstablecerCondicionAtaque());
+                //SE LLAMA AL METODO DE CONDICIONES DE ATAQUE
+               StartCoroutine(IEEstablecerCondicionAtaque());
             }
         }
     }
@@ -96,8 +98,16 @@ public class PersonajeAtaque : MonoBehaviour
             EventoEnemigoDañado?.Invoke(daño);
         }*/
     }
-
-
+    //METODO IE ENUMERATOR PARA LAS CONDICIONES DE ATAQUE
+     private IEnumerator IEEstablecerCondicionAtaque()
+    {
+        //SE ESTABLECE ATACANDO A VERDADERO
+        Atacando = true;
+        //LUEGO DE UNOS SEGUNDOS
+        yield return new WaitForSeconds(0.3f);
+        //SE ESTABLECE A FALSE
+        Atacando = false;
+    }
      
 
     //SE CREA EL METODO EQUIPAR ARMA SE PASA COMO PARAMETRO UN ITEM ARMA
