@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PersonajeAtaque : MonoBehaviour
 {
-    
+    public static Action<float> EventoEnemigoDañado;
     [Header("Stats")] 
     [SerializeField] private PersonajeStats stats;
 
@@ -84,20 +86,36 @@ public class PersonajeAtaque : MonoBehaviour
             //SE OBTIENE EL COMPONENTE EL COMPONENTE DE PROYECTIL 
             Proyectil proyectil = nuevoProyectil.GetComponent<Proyectil>();
             //SE INICIALIZA ESTE PROYECTIL
-            proyectil.InicializarProyectil(EnemigoObjetivo);
+            proyectil.InicializarProyectil(this);
             //se activa el nuevo proyectil
             nuevoProyectil.SetActive(true);
             //SE DESCUENTA EL MANA QUE SE ESTA UTILIZANDO 
             _personajeMana.UsarMana(ArmaEquipada.ManaRequerida);
         }
-       /* else //DE LO CONTRARIO 
+        else //DE LO CONTRARIO 
         {
             float daño = ObtenerDaño();
             EnemigoVida enemigoVida = EnemigoObjetivo.GetComponent<EnemigoVida>();
             enemigoVida.RecibirDaño(daño);
             EventoEnemigoDañado?.Invoke(daño);
-        }*/
+        }
     }
+    //METODO DE OBTENER DAÑO 
+     public float ObtenerDaño()
+    {
+        //SE OBTIENE REFERENCIA  DE DAÑO ACTUAL 
+        float cantidad = stats.Daño;
+        //SI EL PORCENTAJE DE CRITICO DIVIDIDO ENTRE 100 ES MAYOR QUE RANDOM VALUE
+        if (Random.value < stats.DCritico / 100)
+        {
+            //SE DUPLICA LA CANTIDAD DE DAÑO 
+            cantidad *= 2;
+        }
+
+        //DE LO CONTRARIO EL DAÑO ES NORMAL
+        return cantidad;
+    }
+
     //METODO IE ENUMERATOR PARA LAS CONDICIONES DE ATAQUE
      private IEnumerator IEEstablecerCondicionAtaque()
     {

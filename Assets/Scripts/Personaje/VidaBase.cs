@@ -13,7 +13,7 @@ public class VidaBase : MonoBehaviour
     protected virtual void Start()
     {
         Vida = VidaInicio;
-        ActualizarBVida(Vida,VidaMaxima);
+        //ActualizarBVida(Vida,VidaMaxima);
     }
 
     // Creamos el metodo para recibir da�o

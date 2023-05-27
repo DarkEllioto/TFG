@@ -29,10 +29,11 @@ public class EnemigoInteraccion : MonoBehaviour
             seleccionMeleeFX.SetActive(estado);
         }
     }
-/*
+
+    //METODO PARA DESACTIVAR LOS SPRITES 
     public void DesactivarSpritesSeleccion()
     {
         seleccionMeleeFX.SetActive(false);
         seleccionRangoFX.SetActive(false);
-    }*/
+    }
 }

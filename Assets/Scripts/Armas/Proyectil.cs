@@ -8,6 +8,8 @@ public class Proyectil : MonoBehaviour
     [Header("Config")]
     [SerializeField] private float velocidad;
 
+    public PersonajeAtaque PersonajeAtaque{get; private set;}
+
     //VARIABLES
     private Rigidbody2D _rigidbody2D;
     private Vector2 direccion;
@@ -46,11 +48,11 @@ public class Proyectil : MonoBehaviour
     }
 
     //METODO INICIALIZAR PROYECTIL SE LE PASA UN PARAMETRO 
-    public void InicializarProyectil(EnemigoInteraccion enemigo)
+    public void InicializarProyectil(PersonajeAtaque ataque)
     {
-        //
-        enemigoObjetivo = enemigo;
-       // enemigoObjetivo = ataque.EnemigoObjetivo;
+        //SE INICIALIZA PERSONAJE ATAQUE
+        PersonajeAtaque=ataque;
+       enemigoObjetivo = ataque.EnemigoObjetivo;
     }
 
     //SE AÑADE UN METODO PARA PODER DESTRUIR EL PROYECTIL
@@ -59,10 +61,12 @@ public class Proyectil : MonoBehaviour
         //SI COLICIONA CON EL ENEMIGO
         if (other.CompareTag("Enemigo"))
         {
-            /*
+            //
             float daño = PersonajeAtaque.ObtenerDaño();
+            //SE OBTIENE EL COMPONENTE DE ENEMIGO VIDA
             enemigoObjetivo.GetComponent<EnemigoVida>().RecibirDaño(daño);
-            PersonajeAtaque.EventoEnemigoDañado?.Invoke(daño);*/
+            //SE INVOCA EL DAÑO
+            PersonajeAtaque.EventoEnemigoDañado?.Invoke(daño);
             //SE DESACTIVA EL OBJECT
             gameObject.SetActive(false);
         }

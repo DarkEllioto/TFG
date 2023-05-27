@@ -20,12 +20,12 @@ public class PersonajeDetector : MonoBehaviour
         {
             //SE OBTIENE LA REFERENCIA
             EnemigoDetectado = other.GetComponent<EnemigoInteraccion>();
-            //
-           // if (EnemigoDetectado.GetComponent<EnemigoVida>().Salud > 0)
-            //{
+            //SI EL ENEMIGO ESTA VIVO 
+            if (EnemigoDetectado.GetComponent<EnemigoVida>().Vida > 0)
+            {
                 //SE LANZA EL EVENTO 
                 EventoEnemigoDetectado?.Invoke(EnemigoDetectado);
-            //}
+            }
         }
     }
 
