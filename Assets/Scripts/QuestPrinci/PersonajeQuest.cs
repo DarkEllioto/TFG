@@ -14,8 +14,24 @@ public class PersonajeQuest : QuestDescripcion
     [Header("Item")]
     [SerializeField] private Image recompensaItemIcono;
     [SerializeField] TextMeshProUGUI recompensaItemCantidad;
+
+    private void Update()
+    {
+        if (QuestPorCompletar.QuestCompletada)
+        {
+            return;
+        }
+        else
+        {
+            //Cargamos el objetivo de la mision
+            tareaObjetivo.text = $"{QuestPorCompletar.CantidadActual}/{QuestPorCompletar.cantidadObjetivo}";
+        }
+       
+    }
+
     public override void ConfigurarQuestUI(Quest quest)
     {
+        base.ConfigurarQuestUI(quest);
         //Cargamos el oro de la quest a la recompensa
         recompensaOro.text = quest.RecompensaORO.ToString();
         //Cargamos la experiencia
@@ -28,5 +44,25 @@ public class PersonajeQuest : QuestDescripcion
         recompensaItemCantidad.text = quest.RecompensaItem.Cantidad.ToString();
 
 
+    }
+    //Completamos el Quest Verificando que ha llegado a 10
+    private void QuestCompletadoRespuesta(Quest questCompletado)
+    {
+        //Completamos que este completa la mision en concreto
+        if(questCompletado.ID == QuestPorCompletar.ID)
+        {
+            //Cargamos el objetivo de la mision
+            tareaObjetivo.text = $"{QuestPorCompletar.CantidadActual}/{QuestPorCompletar.cantidadObjetivo}";
+            gameObject.SetActive(false);
+        }
+    }
+    private void OnEnable()
+    {
+        Quest.EventoQuestCompletado += QuestCompletadoRespuesta;
+    }
+
+    private void OnDisable()
+    {
+        Quest.EventoQuestCompletado -= QuestCompletadoRespuesta;
     }
 }

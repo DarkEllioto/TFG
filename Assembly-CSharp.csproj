@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoInteraccion.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoBarraVida.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeDetector.cs" />
     <Compile Include="Assets\Scripts\QuestPrinci\Quest.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeMana.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionVida.cs" />
     <Compile Include="Assets\Scripts\Inventario\Items\ItemPocionMana.cs" />
     <Compile Include="Assets\Scripts\Dialogo\NPCDialogo.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoVida.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAtaque.cs" />
     <Compile Include="Assets\Waypoint\NPCMovimiento.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
@@ -111,10 +113,10 @@
     <Compile Include="Assets\Scripts\Extras\AtributoButton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeStats.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
+    <Compile Include="Assets\Scripts\QuestPrinci\PersonajeQuest.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAnimaciones.cs" />
     <Compile Include="Assets\Scripts\Extras\ZonaConfiner.cs" />
     <Compile Include="Assets\Scripts\Tienda\ItemTienda.cs" />
-    <Compile Include="Assets\Scripts\QuestPrinci\PersonajeQuest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

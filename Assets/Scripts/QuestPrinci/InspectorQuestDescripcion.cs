@@ -11,7 +11,7 @@ public class InspectorQuestDescripcion : QuestDescripcion
     public override void ConfigurarQuestUI(Quest quest)
     {
         base.ConfigurarQuestUI(quest);
-        QuestCargado = quest;
+       
         //Cargamos dentro del panel los datos
         questRecompensa.text = $"-{quest.RecompensaORO } oro" +
                                $"\n-{quest.RecompensaExp } exp" +
@@ -22,13 +22,16 @@ public class InspectorQuestDescripcion : QuestDescripcion
     public void AceptarQuest()
     {
         //Comprobamos que la mision no este cargada ya
-        if(QuestCargado == null)
+        if(QuestPorCompletar == null)
         {
             return;
         }
+        
         //Añadimos a nuestro panel la mision
-        QuestManager.Instance.AñadirQuest(QuestCargado);
+        QuestManager.Instance.AñadirQuest(QuestPorCompletar);
         //La borramos del panel del inspector
         gameObject.SetActive(false);
+        
+        
     }
 }
