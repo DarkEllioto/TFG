@@ -2,6 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+//ENUMERACION PARA LOS TIPOS DE PERSONAJE 
+public enum TipoPersonaje
+{
+    Player,
+    IA
+}
 
 public class PersonajeFX : MonoBehaviour
 {
@@ -16,6 +22,9 @@ public class PersonajeFX : MonoBehaviour
     //EXPECIFICACION DEL DONDE SE PONE EL TEXTO
     [SerializeField] private Transform canvasTextoPosicion;
 
+     [Header("Tipo")] 
+     //VARIABLE DE TIPO PERSONAJE
+    [SerializeField] private TipoPersonaje tipoPersonaje;
 
     
 
@@ -24,11 +33,11 @@ public class PersonajeFX : MonoBehaviour
         pooler.CrearPooler(canvasTextoAnimacionPrefab); //se crea el objeto del canvas
     }
 
-    private IEnumerator IEMostrarTexto(float cantidad)   //para mostrar el texto se expecifica el daño que se esta haciendo 
+    private IEnumerator IEMostrarTexto(float cantidad, Color color)   //para mostrar el texto se expecifica el daño que se esta haciendo 
     {
         GameObject nuevoTextoGO = pooler.ObtenerInstancia(); //nuevo game object //se obtiene la instancia del ppoler
         TextoAnimacion texto = nuevoTextoGO.GetComponent<TextoAnimacion>(); //SE ESTABLECE EL TEXTO DEL DAÑO, REFERENCIA DE LA CLASE
-        texto.EstablecerTexto(cantidad); //SE LE ESTABLECE EL NUMERO DE DAÑO
+        texto.EstablecerTexto(cantidad, color); //SE LE ESTABLECE EL NUMERO DE DAÑO
         nuevoTextoGO.transform.SetParent(canvasTextoPosicion); //SE EXTABLECE EL PAREN DEL TEXTO PARA QUE EL TEXTO SE MUEVA CON EL PERSONAJE
         nuevoTextoGO.transform.position = canvasTextoPosicion.position; //SE PASA LA POSICION DEL PERSONAJE
         nuevoTextoGO.SetActive(true);// SE ACTIVA A TRUE
@@ -38,18 +47,36 @@ public class PersonajeFX : MonoBehaviour
         nuevoTextoGO.transform.SetParent(pooler.ListaContenedor.transform); //SE PONE EL PAREN OTRA VEZ A LA LISTA CONTENEDOR 
     }
     //METODO PARA PASAR EL DAÑO 
-    private void RespuestaDañoRecibido(float daño)
+    private void RespuestaDañoRecibidoHaciaPlayer(float daño)
     {
-        StartCoroutine(IEMostrarTexto(daño));
+        //SE COMPRUEBA QUE SEA UN JUGADOR
+        if (tipoPersonaje == TipoPersonaje.Player){
+            //SE MUESTRA EL TEXTO DEL DAÑO 
+            StartCoroutine(IEMostrarTexto(daño, Color.black));
+        }
+    }
+
+        //METODO DEL DAÑO AL ENEMIGO SE PASA PARAMETRO TIPO FLOAT
+    private void RespuestaDañoHaciaEnemigo(float daño)
+    {
+        //SE COMPRUEBA SI EL PERSONAJE ES DE TIPO ENEMIGO 
+        if (tipoPersonaje == TipoPersonaje.IA)
+        {
+            //SE MUESTRA EL DAÑO  
+            StartCoroutine(IEMostrarTexto(daño, Color.red));
+        }
     }
     
     private void OnEnable() //SE RESPONDE AL EVENTO
     {
-        IA_Controller.EventoDañoRealizado += RespuestaDañoRecibido;
+        IA_Controller.EventoDañoRealizado += RespuestaDañoRecibidoHaciaPlayer;
+        //SE GUARDA EL DAÑO GENERADO AL ENEMIGO
+         PersonajeAtaque.EventoEnemigoDañado += RespuestaDañoHaciaEnemigo;
     }
 
     private void OnDisable() //SE RESPONDE AL EVENTO 
     {
-        IA_Controller.EventoDañoRealizado -= RespuestaDañoRecibido;
+        IA_Controller.EventoDañoRealizado -= RespuestaDañoRecibidoHaciaPlayer;
+         PersonajeAtaque.EventoEnemigoDañado -= RespuestaDañoHaciaEnemigo;
     }
 }
