@@ -58,6 +58,11 @@ public class PersonajeQuest : QuestDescripcion
     }
     private void OnEnable()
     {
+        //Comprobamos que la mision no este completa antes de abrir el panel de misiones
+        if (QuestPorCompletar.QuestCompletada)
+        {
+            gameObject.SetActive(false);
+        }
         Quest.EventoQuestCompletado += QuestCompletadoRespuesta;
     }
 
