@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class QuestManager : Singleton<QuestManager>
 {
+    //Obtenemos la referencia de nuestro personaje
+    [Header("Personaje")]
+    [SerializeField] private Personaje personaje;
     //Creamos un array donde guardar todas las quest
     [Header("Quest")]
     [SerializeField] private Quest[] questDisponibles;
@@ -71,6 +74,20 @@ public class QuestManager : Singleton<QuestManager>
     public void AñadirQuest(Quest questPorCompletar)
     {
         AñadirQuestPorCompletar(questPorCompletar);
+    }
+    //Creamos el metodo que nos permita reclamar la recompensa
+    public void ReclamarRecompensa()
+    {
+        if(QuestPorReclamar == null)
+        {
+            return;
+        }
+        MonedasManager.Instance.AñadirMonedas(QuestPorReclamar.RecompensaORO);
+        personaje.PersonajeExperiencia.AñadirExp(QuestPorReclamar.RecompensaExp);
+        Inventario.Instance.AñadirItem(QuestPorReclamar.RecompensaItem.Item, QuestPorReclamar.RecompensaItem.Cantidad);
+        //Desactivamos el panel y recibimos las recompensas
+        panelQuestCompletado.SetActive(false);
+        QuestPorReclamar = null;
     }
     //Creamos el metodo que me permita añadir progreso
     public void AñadirProgreso(string questID,int cantidad)

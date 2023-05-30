@@ -18,7 +18,7 @@ public class PersonajeVida : VidaBase
     //Creamos un booleano para saber si nuestro personaje tiene menos vida de la maxima para curarle
     public bool PuedeCurarse => Vida < VidaMaxima;
     //Probamos hacer daño a nuestro personaje para testear 
-
+    
     //Creamos un metodo awake para el colisionador 
     private void Awake()
     {
@@ -90,6 +90,7 @@ public class PersonajeVida : VidaBase
     protected override void Start()
     {
         base.Start();
+        ActualizarBVida(VidaInicio, VidaMaxima);
     }
 }
 

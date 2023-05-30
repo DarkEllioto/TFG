@@ -9,7 +9,7 @@ public class Personaje : MonoBehaviour
     {
     //Creamos una referencia a nuestros stats
     [SerializeField] private PersonajeStats stats;
-
+    public PersonajeExperiencia PersonajeExperiencia { get; private set; }
     //Creamos unos getter/setter para dar acceso a otras clases a nuestras propiedades
     public PersonajeVida PersonajeVida { get; private set; }
     //Creamos otros getter/setter para dar valores
@@ -25,6 +25,7 @@ public class Personaje : MonoBehaviour
         PersonajeVida = GetComponent<PersonajeVida>();
         PersonajeAnimaciones = GetComponent<PersonajeAnimaciones>();
         PersonajeMana = GetComponent<PersonajeMana>();
+        PersonajeExperiencia = GetComponent<PersonajeExperiencia>();
     }
 
     //Creamos un metodo public para restaurar al personaje

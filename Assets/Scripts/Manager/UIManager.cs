@@ -33,6 +33,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI ManaTMP;
     [SerializeField] private TextMeshProUGUI ExpTMP;
     [SerializeField] private TextMeshProUGUI NivelTMP;
+    [SerializeField] private TextMeshProUGUI MonedasTMP;
 
     //Creamos un header para los stats y  vamos creamos su campo de texto
     [Header("Stats")]
@@ -91,6 +92,8 @@ public class UIManager : Singleton<UIManager>
         ExpTMP.text = $"{((expActual/expRequeridaNewLevel)*100):F2}%";
         //Obtenemos el texto del nivel
         NivelTMP.text = $"Nivel {stats.Nivel}";
+        //Actualizamos las monedas
+        MonedasTMP.text = MonedasManager.Instance.MonedasTotales.ToString();
     }
     //Creamos el metodo para actualizar el panel de stats
     private void ActualizarPanelStats()
