@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ArmaMagiaArco
   m_EditorClassIdentifier: 
   ArmaIcono: {fileID: 21300000, guid: 19536bb9680e7bc41b03459b69760ff1, type: 3}
-  IconoSkill: {fileID: 1180244850, guid: f911827ee39108b409c6cf31ddd7162a, type: 3}
+  IconoSkill: {fileID: 545474393, guid: f911827ee39108b409c6cf31ddd7162a, type: 3}
   Tipo: 0
   "Da\xF1o": 2
+  ProyectilPrefab: {fileID: 0}
   ManaRequerida: 3
   ChanceCritico: 1.5
   ChanceBloqueo: 0
