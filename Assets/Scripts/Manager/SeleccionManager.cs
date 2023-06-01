@@ -50,8 +50,19 @@ public class SeleccionManager : MonoBehaviour
             {
                 //SE LE OBTIENE EL COMPONENTE DEL ENEMIGO
                 EnemigoSeleccionado = hit.collider.GetComponent<EnemigoInteraccion>();
+                //SE OBTIENE EL COMPONENTE DE LA VIDA ENEMIGO SELECCIONADO
+                EnemigoVida enemigoVida = EnemigoSeleccionado.GetComponent<EnemigoVida>();
+                //SI EL ENEMIGO ESTA VIVO
+                 if (enemigoVida.Vida > 0f)
+                {
                 //SE INVOCA EL EVENTO Y SE LE PASA EL ENEMIGO SELECCIONADO
                 EventoEnemigoSeleccionado?.Invoke(EnemigoSeleccionado);
+                }
+                else //SI NO ESTA VIVO SE MUESTRA EL PANEL DE LOOT
+                {
+                   // EnemigoLoot loot = EnemigoSeleccionado.GetComponent<EnemigoLoot>();
+                    LootManager.Instance.MostrarLoot();
+                }
             }
             else
             {

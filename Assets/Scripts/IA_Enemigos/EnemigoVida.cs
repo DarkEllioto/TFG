@@ -6,8 +6,12 @@ using UnityEngine;
 public class EnemigoVida : VidaBase
 {
     //VARIABLES 
+    [Header("Vida")]
    [SerializeField] private EnemigoBarraVida barraVidaPrefab;
     [SerializeField] private Transform barraVidaPosicion;
+
+     [Header("Rastros")] 
+    [SerializeField] private GameObject rastros;
 
     //REFERENCIAS
     private EnemigoBarraVida _enemigoBarraVidaCreada;
@@ -61,6 +65,7 @@ public class EnemigoVida : VidaBase
     private void DesactivarEnemigo()
     {
         //SE DESACTIVA LOS CONTROLES Y RENDERED, LA BARRA Y EL MOVIMIENTO DEL ENEMIGO
+        rastros.SetActive(true);
         _enemigoBarraVidaCreada.gameObject.SetActive(false);
         _spriteRenderer.enabled = false;
        _enemigoMovimiento.enabled = false;

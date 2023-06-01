@@ -412,6 +412,7 @@
 "Assets/Scripts/Inventario/Items/ItemArma.cs"
 "Assets/Scripts/Inventario/Items/ItemPocionMana.cs"
 "Assets/Scripts/Inventario/Items/ItemPocionVida.cs"
+"Assets/Scripts/Loot/LootManager.cs"
 "Assets/Scripts/Manager/LevelManager.cs"
 "Assets/Scripts/Manager/MonedasManager.cs"
 "Assets/Scripts/Manager/SeleccionManager.cs"
