@@ -145,7 +145,11 @@ public class UIManager : Singleton<UIManager>
     {
         panelMisionesPersonaje.SetActive(!panelMisionesPersonaje.activeSelf);
     }
+<<<<<<< Updated upstream
     public void abrirCerrarInicio()
+=======
+    public void CerrarPanelInicio()
+>>>>>>> Stashed changes
     {
         panelInicio.SetActive(!panelInicio.activeSelf);
     }

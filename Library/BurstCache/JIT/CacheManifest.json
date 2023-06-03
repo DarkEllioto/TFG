@@ -7,7 +7,11 @@
     },
     {
       "FullName": "PsdPlugin, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-01T10:45:21.8722488Z"
+=======
+      "LastWriteTime": "2023-06-03T12:10:54.3874173Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -15,7 +19,11 @@
     },
     {
       "FullName": "Unity.2D.Animation.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-01T10:45:22.0207893Z"
+=======
+      "LastWriteTime": "2023-06-03T12:10:54.3544093Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "netstandard, Version=2.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
@@ -23,7 +31,11 @@
     },
     {
       "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-01T10:45:22.0823087Z"
+=======
+      "LastWriteTime": "2023-06-03T12:10:54.3874173Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -31,17 +43,26 @@
     },
     {
       "FullName": "Unity.2D.Common.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-01T10:45:22.1243177Z"
     },
     {
       "FullName": "Unity.2D.SpriteShape.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-06-01T10:45:21.9867816Z"
+=======
+      "LastWriteTime": "2023-06-03T12:10:54.4304268Z"
+    },
+    {
+      "FullName": "Unity.2D.SpriteShape.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-03T12:10:54.4084219Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2022-10-27T21:24:34Z"
     },
     {
+<<<<<<< Updated upstream
       "FullName": "Unity.2D.Common.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-06-01T10:45:21.8652467Z"
     },
@@ -56,6 +77,22 @@
     {
       "FullName": "Unity.2D.Animation.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-06-01T10:45:21.9307745Z"
+=======
+      "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-03T12:10:54.4394288Z"
+    },
+    {
+      "FullName": "Unity.2D.Common.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-03T12:10:54.4424295Z"
+    },
+    {
+      "FullName": "Unity.2D.Psdimporter.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-03T12:10:54.7403524Z"
+    },
+    {
+      "FullName": "Unity.2D.Animation.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-03T12:10:54.7213488Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "mscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -119,9 +156,15 @@
         0,
         8,
         9,
+<<<<<<< Updated upstream
         10,
         2,
         4,
+=======
+        2,
+        4,
+        10,
+>>>>>>> Stashed changes
         11
       ]
     },
@@ -134,7 +177,11 @@
         0,
         12,
         2,
+<<<<<<< Updated upstream
         11
+=======
+        10
+>>>>>>> Stashed changes
       ]
     },
     {
@@ -144,8 +191,13 @@
       "LinkName": "7F9BDFAB3718C423",
       "AssemblyDependencyIndices": [
         13,
+<<<<<<< Updated upstream
         11,
         2,
+=======
+        2,
+        10,
+>>>>>>> Stashed changes
         5,
         4,
         0,
@@ -161,7 +213,11 @@
         0,
         12,
         2,
+<<<<<<< Updated upstream
         11
+=======
+        10
+>>>>>>> Stashed changes
       ]
     },
     {
@@ -182,10 +238,17 @@
       "LinkName": "8115CAFF6B65630B",
       "AssemblyDependencyIndices": [
         7,
+<<<<<<< Updated upstream
         2,
         6,
         0,
         11,
+=======
+        6,
+        2,
+        0,
+        10,
+>>>>>>> Stashed changes
         5,
         4
       ]
@@ -197,7 +260,10 @@
       "LinkName": "CDCA4A5193BE5947",
       "AssemblyDependencyIndices": [
         5,
+<<<<<<< Updated upstream
         14,
+=======
+>>>>>>> Stashed changes
         4,
         2
       ]
@@ -211,10 +277,17 @@
         13,
         2,
         0,
+<<<<<<< Updated upstream
         11,
         4,
         5,
         10,
+=======
+        10,
+        4,
+        5,
+        11,
+>>>>>>> Stashed changes
         6
       ]
     },
@@ -225,12 +298,22 @@
       "LinkName": "4E9252389FAD9FEE",
       "AssemblyDependencyIndices": [
         13,
+<<<<<<< Updated upstream
         2,
         0,
         11,
         5,
         4,
         10,
+=======
+        14,
+        11,
+        2,
+        0,
+        10,
+        5,
+        4,
+>>>>>>> Stashed changes
         6
       ]
     }
