@@ -60,8 +60,8 @@ public class SeleccionManager : MonoBehaviour
                 }
                 else //SI NO ESTA VIVO SE MUESTRA EL PANEL DE LOOT
                 {
-                   // EnemigoLoot loot = EnemigoSeleccionado.GetComponent<EnemigoLoot>();
-                    LootManager.Instance.MostrarLoot();
+                    EnemigoLoot loot = EnemigoSeleccionado.GetComponent<EnemigoLoot>();
+                    LootManager.Instance.MostrarLoot(loot);
                 }
             }
             else
