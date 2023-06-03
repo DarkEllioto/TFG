@@ -41,14 +41,14 @@ public class PersonajeExperiencia : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            AñadirExp(6f);
+            AÃ±adirExp(6f);
         }
         
     }
 
-    //Creamos un metodo para añadir exp a nuestro personaje
+    //Creamos un metodo para aï¿½adir exp a nuestro personaje
 
-    public void AñadirExp( float expObtenida)
+    public void AÃ±adirExp( float expObtenida)
     {
         
         //Verificamos que la exp no sea 0
@@ -69,7 +69,7 @@ public class PersonajeExperiencia : MonoBehaviour
         {
             float diff = expActual - expRequeridaSiguienteNivel;
             ActualizarNivel();
-            AñadirExp(diff);
+            AÃ±adirExp(diff);
         }
         ActualizarBarraExp();
     }
@@ -88,7 +88,7 @@ public class PersonajeExperiencia : MonoBehaviour
             expRequeridaSiguienteNivel *= valorIncremental;
             //Actualizamos en nuestro panel de estadisticas la experiencia requerida
             stats.ExpRequerida = expRequeridaSiguienteNivel;
-            //Añadimos puntos para aumentar atributos
+            //Aï¿½adimos puntos para aumentar atributos
             stats.PuntosDisponibles += 3;
         }
     } 
@@ -97,5 +97,22 @@ public class PersonajeExperiencia : MonoBehaviour
     private void ActualizarBarraExp()
     {
         UIManager.Instance.ActualizarExpPersonaje(expActual,expRequeridaSiguienteNivel);
+    }
+    //METODO DE RESPUESTA DE EXPERIENCIA GANADA CON UN PARAMETRO DE TIPO FLOAT
+    private void RespuestaEnemigoDerrotado(float exp)
+    {
+        AÃ±adirExp(exp);
+    }
+
+
+     private void OnEnable()
+    {
+        //se llama al evento enemigo derrotado
+        EnemigoVida.EventoEnemigoDerrotado += RespuestaEnemigoDerrotado;
+    }
+
+    private void OnDisable()
+    {
+        EnemigoVida.EventoEnemigoDerrotado -= RespuestaEnemigoDerrotado;
     }
 }

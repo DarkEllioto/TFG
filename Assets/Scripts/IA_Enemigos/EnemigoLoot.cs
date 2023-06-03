@@ -6,13 +6,19 @@ using Random = UnityEngine.Random;
 public class EnemigoLoot : MonoBehaviour
 {
 
+
     //variables
+      [Header("Exp")] 
+    [SerializeField] private float expGanada;
+
+
     [Header("Loot")] 
     [SerializeField] private DropItem[] lootDisponible;
     //un array de loop disponibles
 
         private List<DropItem> lootSeleccionado = new List<DropItem>();
         public List<DropItem> LootSeleccionado => lootSeleccionado;
+        public float ExpGanada => expGanada;
 
 
     //METODO DE INICIAR

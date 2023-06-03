@@ -64,9 +64,10 @@ public class Proyectil : MonoBehaviour
             //SE CREA LA VARIABLE DE DAÑO
             float daño = PersonajeAtaque.ObtenerDaño();
             //SE OBTIENE EL COMPONENTE DE ENEMIGO VIDA
-            enemigoObjetivo.GetComponent<EnemigoVida>().RecibirDaño(daño);
+             EnemigoVida enemigoVida = enemigoObjetivo.GetComponent<EnemigoVida>();
+            enemigoVida.RecibirDaño(daño);
             //SE INVOCA EL DAÑO, SE LANZA EL EVENTO ACCEDIENDO A LA REFERENCIA
-            PersonajeAtaque.EventoEnemigoDañado?.Invoke(daño);
+            PersonajeAtaque.EventoEnemigoDañado?.Invoke(daño, enemigoVida);
             //SE DESACTIVA EL OBJECT
             gameObject.SetActive(false);
         }

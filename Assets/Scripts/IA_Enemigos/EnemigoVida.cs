@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemigoVida : VidaBase
 {
+    public static Action<float> EventoEnemigoDerrotado;
+
     //VARIABLES 
     [Header("Vida")]
    [SerializeField] private EnemigoBarraVida barraVidaPrefab;
@@ -17,6 +20,7 @@ public class EnemigoVida : VidaBase
     private EnemigoBarraVida _enemigoBarraVidaCreada;
     private EnemigoInteraccion _enemigoInteraccion;
     private EnemigoMovimiento _enemigoMovimiento;
+    private EnemigoLoot _enemigoLoot;
     private SpriteRenderer _spriteRenderer;
     private BoxCollider2D _boxCollider2D;
     private IA_Controller _controller;
@@ -36,6 +40,7 @@ public class EnemigoVida : VidaBase
        _enemigoInteraccion = GetComponent<EnemigoInteraccion>();
        _enemigoMovimiento = GetComponent<EnemigoMovimiento>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+         _enemigoLoot = GetComponent<EnemigoLoot>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _controller = GetComponent<IA_Controller>();
     }
@@ -59,6 +64,13 @@ public class EnemigoVida : VidaBase
     {
         //SE LLAMA A DESACTIVAR ENEMIGO
         DesactivarEnemigo();
+        //SE INVOCA AL EVENTO
+         EventoEnemigoDerrotado?.Invoke(_enemigoLoot.ExpGanada);
+         //SE AÑADEN PROGRESOS A LAS MISIONES 
+        
+       /* QuestManager.Instance.AñadirProgreso();
+        QuestManager.Instance.AñadirProgreso("Mata25", 1);
+        QuestManager.Instance.AñadirProgreso("Mata50", 1);*/
     }
 
     //METODO PARA DESACTIVAR EL ENEMIGO 

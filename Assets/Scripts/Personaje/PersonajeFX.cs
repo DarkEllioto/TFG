@@ -26,7 +26,14 @@ public class PersonajeFX : MonoBehaviour
      //VARIABLE DE TIPO PERSONAJE
     [SerializeField] private TipoPersonaje tipoPersonaje;
 
-    
+    //REFERENCIA DEL ENEMIGO 
+     private EnemigoVida _enemigoVida;
+
+     private void Awake()
+    {
+        //SE OBTIENE EL COMPONENTE DEL ENEMIGO
+        _enemigoVida = GetComponent<EnemigoVida>();
+    }
 
     private void Start()
     {
@@ -57,10 +64,10 @@ public class PersonajeFX : MonoBehaviour
     }
 
         //METODO DEL DAÑO AL ENEMIGO SE PASA PARAMETRO TIPO FLOAT
-    private void RespuestaDañoHaciaEnemigo(float daño)
+    private void RespuestaDañoHaciaEnemigo(float daño, EnemigoVida enemigoVida)
     {
         //SE COMPRUEBA SI EL PERSONAJE ES DE TIPO ENEMIGO 
-        if (tipoPersonaje == TipoPersonaje.IA)
+        if (tipoPersonaje == TipoPersonaje.IA && _enemigoVida == enemigoVida)
         {
             //SE MUESTRA EL DAÑO  
             StartCoroutine(IEMostrarTexto(daño, Color.red));

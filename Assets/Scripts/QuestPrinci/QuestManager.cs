@@ -23,7 +23,7 @@ public class QuestManager : Singleton<QuestManager>
     [SerializeField] private PersonajeQuest PersonajeQuestPrefab;
     [SerializeField] private Transform PersonajeQuestContenedor;
 
-    //Añadimos las referencias del panel 
+    //Aï¿½adimos las referencias del panel 
     [Header("Panel Quest Completado")]
     [SerializeField] private GameObject panelQuestCompletado;
     [SerializeField] private TextMeshProUGUI questNombre;
@@ -44,9 +44,9 @@ public class QuestManager : Singleton<QuestManager>
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
-            AñadirProgreso("Matar10", 1);
-            AñadirProgreso("Matar25", 1);
-            AñadirProgreso("Matar50", 1);
+            AÃ±adirProgreso("Matar10", 1);
+            AÃ±adirProgreso("Matar25", 1);
+            AÃ±adirProgreso("Matar50", 1);
         }
     }
 
@@ -63,17 +63,17 @@ public class QuestManager : Singleton<QuestManager>
         }
     }
     //Creamos el metodo para cargar las misiones en el personaje
-    private void AñadirQuestPorCompletar(Quest questPorCompletar)
+    private void AÃ±adirQuestPorCompletar(Quest questPorCompletar)
     {
         PersonajeQuest nuevoQuest = Instantiate(PersonajeQuestPrefab, PersonajeQuestContenedor);
         nuevoQuest.ConfigurarQuestUI(questPorCompletar);
     }
 
-    //Llamamos al meotdo para añadir las quest
+    //Llamamos al meotdo para aï¿½adir las quest
 
-    public void AñadirQuest(Quest questPorCompletar)
+    public void AÃ±adirQuest(Quest questPorCompletar)
     {
-        AñadirQuestPorCompletar(questPorCompletar);
+        AÃ±adirQuestPorCompletar(questPorCompletar);
     }
     //Creamos el metodo que nos permita reclamar la recompensa
     public void ReclamarRecompensa()
@@ -82,19 +82,19 @@ public class QuestManager : Singleton<QuestManager>
         {
             return;
         }
-        MonedasManager.Instance.AñadirMonedas(QuestPorReclamar.RecompensaORO);
-        personaje.PersonajeExperiencia.AñadirExp(QuestPorReclamar.RecompensaExp);
-        Inventario.Instance.AñadirItem(QuestPorReclamar.RecompensaItem.Item, QuestPorReclamar.RecompensaItem.Cantidad);
+        MonedasManager.Instance.AÃ±adirMonedas(QuestPorReclamar.RecompensaORO);
+        personaje.PersonajeExperiencia.AÃ±adirExp(QuestPorReclamar.RecompensaExp);
+        Inventario.Instance.AÃ±adirItem(QuestPorReclamar.RecompensaItem.Item, QuestPorReclamar.RecompensaItem.Cantidad);
         //Desactivamos el panel y recibimos las recompensas
         panelQuestCompletado.SetActive(false);
         QuestPorReclamar = null;
     }
-    //Creamos el metodo que me permita añadir progreso
-    public void AñadirProgreso(string questID,int cantidad)
+    //Creamos el metodo que me permita aï¿½adir progreso
+    public void AÃ±adirProgreso(string questID,int cantidad)
     {
         //Verificamos si la mision existe
         Quest questPorActualizar = QuestExiste(questID);
-        questPorActualizar.añadirProgreso(cantidad);
+        questPorActualizar.aÃ±adirProgreso(cantidad);
     }
 
     //Buscamos la referencia de la quest para comprobar que existe
@@ -126,7 +126,7 @@ public class QuestManager : Singleton<QuestManager>
         questRecompensaItemIcono.sprite = questCompletado.RecompensaItem.Item.Icono;
     }
 
-    //Añadimos los metodos para poder activar el evento 
+    //Aï¿½adimos los metodos para poder activar el evento 
     private void QuestCompletadoRespuesta(Quest QuestCompletado)
     {
         //Verificamos que exista la mision completada

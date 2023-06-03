@@ -28,8 +28,8 @@ public class Quest : ScriptableObject
     [HideInInspector] public int CantidadActual;
     [HideInInspector] public bool QuestCompletada;
 
-    //Añadimos un metodo que nos permita añadir progreso a la mision
-    public void añadirProgreso(int cantidad)
+    //Aï¿½adimos un metodo que nos permita aï¿½adir progreso a la mision
+    public void aÃ±adirProgreso(int cantidad)
     {
         CantidadActual += cantidad;
         VerificaQuestCompletado();
