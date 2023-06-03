@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\IA_Enemigos\Sistema_IA\IA_Estado.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioSlot.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\Acciones\AccionAtacarPersonaje.cs" />
+    <Compile Include="Assets\Scripts\Loot\LootButton.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoInteraccion.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoBarraVida.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeDetector.cs" />
@@ -89,10 +90,12 @@
     <Compile Include="Assets\Scripts\Dialogo\NPCDialogo.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoVida.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAtaque.cs" />
-    <Compile Include="Assets\Waypoint\NPCMovimiento.cs" />
+    <Compile Include="Assets\Waypoint\NPCmovimiento.cs" />
+    <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoLoot.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
     <Compile Include="Assets\Scripts\Dialogo\NPCInteraccion.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioUI.cs" />
+    <Compile Include="Assets\Scripts\Loot\DropItem.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeFX.cs" />
     <Compile Include="Assets\Scripts\Extras\Portal.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoMovimiento.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="Assets\Scripts\Personaje\PersonajeVida.cs" />
     <Compile Include="Assets\Scripts\Inventario\Items\ItemArma.cs" />
     <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />
+    <Compile Include="Assets\Scripts\Loot\LootManager.cs" />
     <Compile Include="Assets\Scripts\Extras\AtributoButton.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeStats.cs" />
     <Compile Include="Assets\Scripts\Inventario\InventarioItem.cs" />
