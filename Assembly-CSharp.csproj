@@ -90,7 +90,7 @@
     <Compile Include="Assets\Scripts\Dialogo\NPCDialogo.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoVida.cs" />
     <Compile Include="Assets\Scripts\Personaje\PersonajeAtaque.cs" />
-    <Compile Include="Assets\Waypoint\NPCmovimiento.cs" />
+    <Compile Include="Assets\Waypoint\NPCMovimiento.cs" />
     <Compile Include="Assets\Scripts\IA_Enemigos\EnemigoLoot.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaBase.cs" />
     <Compile Include="Assets\Scripts\Dialogo\NPCInteraccion.cs" />

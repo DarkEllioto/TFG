@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Inspector1
   m_EditorClassIdentifier: 
   Nombre: Fernando
-  Icono: {fileID: 0}
+  Icono: {fileID: 2116177984, guid: 92e9ef90edee80245b4eccf148c0604f, type: 3}
   ContieneInteraccionExtra: 1
   InteraccionExtra: 0
   Saludo: Buenas joven aventurero.
