@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BayatGames.SaveGameFree;
 using UnityEngine;
 
 public class Inventario : Singleton<Inventario>
 {
     [Header("Items")]
+    //REFERENCIA AL ALMACEN
+     [SerializeField] private InventarioAlmacen inventarioAlmacen;
     //Creamos la variable para obtener el total de slots de nuestro inventario
     [SerializeField] private int numeroDeSlots;
     //Creamos un array para guardar los items de nuestro inventario
@@ -18,10 +21,12 @@ public class Inventario : Singleton<Inventario>
     public InventarioItem[] ItemsInventario => itemsInventario;
     public Personaje Personaje => personaje;
 
+    private readonly string INVENTARIO_KEY = "MiJuegoMiInventario105205120";
 
     private void Start()
     {
         itemsInventario = new InventarioItem[numeroDeSlots];
+        CargarInventario();
     }
     //Creamos el metodo que nos permita añadir un item
     public void AñadirItem(InventarioItem itemPorAñadir,int cantidad)
@@ -77,6 +82,8 @@ public class Inventario : Singleton<Inventario>
         {
             AñadirItemEnSlotDisponible(itemPorAñadir, cantidad);
         }
+        //SE LLAMA AL METODO GUARDAR INVENTARIO
+        GuardarInventario();
 
     }
     //Creamos el metodo para verificar que el item se encuentre o no en el inventario
@@ -131,6 +138,7 @@ public class Inventario : Singleton<Inventario>
         {
             InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[index], itemsInventario[index].cantidad, index);
         }
+        GuardarInventario();
     }
     //Creamos el metodo para usar el item
     private void UsarItem(int index)
@@ -191,6 +199,98 @@ public class Inventario : Singleton<Inventario>
 
 
 
+     #region Guardado
+
+    //METODO PARA INVENTARIO
+    private InventarioItem ItemExisteEnAlmacen(string ID)
+    {
+        //SE RECORRE EL INVENTARIO
+        for (int i = 0; i < inventarioAlmacen.Items.Length; i++)
+        {
+            //SE COMPRUEBA QUE EL ID ES IGUAL A ALGUNO 
+            if (inventarioAlmacen.Items[i].ID == ID)
+            {
+                //SE REGRESA LA REFERENCIA
+                return inventarioAlmacen.Items[i];
+            }
+        }
+
+        return null;
+    }
+    
+    //SE CREA UNA REFERENCIA DE LA CLASE INVENTARIODATA
+    private InventarioData dataGuardado;
+    //METODO GUARDAR INVENTARIO
+    private void GuardarInventario()
+    {
+        //SE INICIALIZA LA REFERENCIA EN UN NUEVO INVENTARIO 
+        dataGuardado = new InventarioData();
+        //SE INICIALIZA EL TAMAÑO DE LOS ARRAY
+        dataGuardado.ItemsDatos = new string[numeroDeSlots];
+        dataGuardado.ItemsCantidad = new int[numeroDeSlots];
+
+        //SE RECORRE EL NUMERO DE SLOTS 
+        for (int i = 0; i < numeroDeSlots; i++)
+        {
+            //SE COMPRUEBA SI LOS INDEX DEL INVENTARIO SON NULOS 
+            if (itemsInventario[i] == null || string.IsNullOrEmpty(itemsInventario[i].ID))
+            {
+                //SE IGUAL A NULOS Y A 0 
+                dataGuardado.ItemsDatos[i] = null;
+                dataGuardado.ItemsCantidad[i] = 0;
+            }
+            else //SI POR EL CONTRARIO SI HAY ALGO EN EL 
+            {
+                //SE GUARDA EL ID Y LA CANTIDAD DEL ITEM CORRESPONDIENTE
+                dataGuardado.ItemsDatos[i] = itemsInventario[i].ID;
+                dataGuardado.ItemsCantidad[i] = itemsInventario[i].cantidad;
+            }
+        }
+        
+        //FINALMENTE SE GUARDA LA INFORMACION EN EL SAVEGame
+        SaveGame.Save(INVENTARIO_KEY, dataGuardado);
+    }
+
+    private InventarioData dataCargado;
+    //METODO Cargar INVENTARIO
+    private void CargarInventario()
+    {
+        //SE COMPRUEBA QUE LA LLAVE TENGA UN VALOR ASOCIADO
+        if (SaveGame.Exists(INVENTARIO_KEY))
+        {
+            //SE CARGA LA INFORMACION EN LA REFERENCIA 
+            dataCargado = SaveGame.Load<InventarioData>(INVENTARIO_KEY);
+            //SE RECORRE EL SLOT
+            for (int i = 0; i < numeroDeSlots; i++)
+            {
+                //SE COMPRUEBA QUE EL ITEMS SEA DISTINTO DE NULL
+                if (dataCargado.ItemsDatos[i] != null)
+                {
+                    //SE AÑADE LA INFORMACION AL DE ITEM DEL ALMACEN
+                    InventarioItem itemAlmacen = ItemExisteEnAlmacen(dataCargado.ItemsDatos[i]);
+                    //SE COMPRUEBA QUE NO ESTE VACIO
+                    if (itemAlmacen != null)
+                    {
+                        //SE CARGAN LOS ITEM
+                        itemsInventario[i] = itemAlmacen.CopiarItem();
+                        itemsInventario[i].cantidad = dataCargado.ItemsCantidad[i];
+                        InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[i], 
+                            itemsInventario[i].cantidad, i);
+                    }
+                }
+                else //SI ES NULL REGRESA NULL 
+                {
+                    itemsInventario[i] = null;
+                }
+            }
+        }
+    }
+    
+    #endregion
+    
+
+
+
 
     //Creamos el metodo para mover item
     public void MoverItem(int indexInicial, int indexFinal)
@@ -211,6 +311,8 @@ public class Inventario : Singleton<Inventario>
 
         itemsInventario[indexInicial] = null;
         InventarioUI.Instance.DibujarItemEnInventario(null,0,indexInicial);
+
+        GuardarInventario();
     }
     #region Eventos
     //Creamos los activables para el boton usar

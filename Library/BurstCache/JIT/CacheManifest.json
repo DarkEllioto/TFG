@@ -7,7 +7,11 @@
     },
     {
       "FullName": "Unity.2D.Common.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-07T15:40:02.3961889Z"
+=======
+      "LastWriteTime": "2023-06-07T17:26:17.1269907Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -15,6 +19,7 @@
     },
     {
       "FullName": "PsdPlugin, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-07T15:40:02.4221948Z"
     },
     {
@@ -24,6 +29,21 @@
     {
       "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-06-07T15:40:02.3636318Z"
+=======
+      "LastWriteTime": "2023-06-07T17:26:16.9172945Z"
+    },
+    {
+      "FullName": "Unity.2D.Psdimporter.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-07T17:26:16.9400559Z"
+    },
+    {
+      "FullName": "Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-07T17:26:16.8919292Z"
+    },
+    {
+      "FullName": "Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-07T17:26:17.2153448Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -39,7 +59,11 @@
     },
     {
       "FullName": "Unity.2D.SpriteShape.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-07T15:40:02.2785665Z"
+=======
+      "LastWriteTime": "2023-06-07T17:26:17.0101704Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -47,6 +71,7 @@
     },
     {
       "FullName": "Unity.2D.Common.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+<<<<<<< Updated upstream
       "LastWriteTime": "2023-06-07T15:40:02.5047371Z"
     },
     {
@@ -56,10 +81,24 @@
     {
       "FullName": "Unity.2D.Animation.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2023-06-07T15:40:03.0903961Z"
+=======
+      "LastWriteTime": "2023-06-07T17:26:17.014597Z"
+>>>>>>> Stashed changes
     },
     {
       "FullName": "mscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "LastWriteTime": "2022-10-27T21:20:46Z"
+<<<<<<< Updated upstream
+=======
+    },
+    {
+      "FullName": "Unity.2D.Animation.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-07T17:26:16.9223048Z"
+    },
+    {
+      "FullName": "Unity.2D.Animation.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "LastWriteTime": "2023-06-07T17:26:16.9452101Z"
+>>>>>>> Stashed changes
     }
   ],
   "Functions": [
