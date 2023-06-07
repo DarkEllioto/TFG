@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 //Heredamos de la clase principal
 public class PersonajeQuest : QuestDescripcion
 {

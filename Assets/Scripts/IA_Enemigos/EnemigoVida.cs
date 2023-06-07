@@ -66,11 +66,10 @@ public class EnemigoVida : VidaBase
         DesactivarEnemigo();
         //SE INVOCA AL EVENTO
          EventoEnemigoDerrotado?.Invoke(_enemigoLoot.ExpGanada);
-         //SE AÑADEN PROGRESOS A LAS MISIONES 
-        
-       /* QuestManager.Instance.AñadirProgreso();
-        QuestManager.Instance.AñadirProgreso("Mata25", 1);
-        QuestManager.Instance.AñadirProgreso("Mata50", 1);*/
+        //SE AÑADEN PROGRESOS A LAS MISIONES 
+        QuestManager.Instance.AñadirProgreso("Matar10", 1);
+        QuestManager.Instance.AñadirProgreso("Matar25", 1);
+        QuestManager.Instance.AñadirProgreso("Matar50", 1);
     }
 
     //METODO PARA DESACTIVAR EL ENEMIGO 

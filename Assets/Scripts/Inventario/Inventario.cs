@@ -140,6 +140,10 @@ public class Inventario : Singleton<Inventario>
         {
             return;
         }
+        if (itemsInventario[index].esConsumible == false) 
+        {
+            return;
+        }
         if (itemsInventario[index].UsarItem())
         {
             EliminarItem(index);
