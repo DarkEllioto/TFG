@@ -48,7 +48,7 @@ public class PersonajeAtaque : MonoBehaviour
           if (Time.time > tiempoParaSiguienteAtaque)
         {
             //AL PULSAR LA TECLA ESPACIO 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 //SE COMPRUEBA SI EL ENEMIGO OBJETIVO O UN ARMA EQUIPADA SON NULOS
                 if (ArmaEquipada == null || EnemigoObjetivo == null)
